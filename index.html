@@ -140,7 +140,7 @@
     }
 
     .hero-title {
-      font-size: clamp(3rem, 12vw, 6rem);
+      font-size: clamp(1.3rem, 4vw, 2rem);
       font-weight: 900;
       color: var(--primary);
       letter-spacing: -0.03em;
@@ -149,8 +149,8 @@
     }
 
     .hero-subtitle {
-      font-size: clamp(1rem, 3vw, 1.4rem);
-      font-weight: 700;
+      font-size: clamp(3rem, 12vw, 6rem);
+      font-weight: 300;
       color: var(--primary);
       margin-bottom: 32px;
       letter-spacing: 0.02em;
@@ -211,6 +211,24 @@
       margin-top: 20px;
       font-size: 0.78rem;
       color: var(--text);
+    }
+
+    /* ─── APP ICON ─── */
+    .hero-app-icon {
+      width: 180px;
+      height: 180px;
+      border-radius: 22.5%;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(16,32,67,0.10), 0 1px 4px rgba(16,32,67,0.06);
+      margin-bottom: 28px;
+      flex-shrink: 0;
+    }
+
+    .hero-app-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     /* ─── SECTION BASE ─── */
@@ -650,14 +668,12 @@
       .hero-buttons { flex-direction: column; align-items: center; }
       .btn-secondary { margin-left: 0; }
 
-      .phones-row { gap: 12px; }
-      .phone-frame { width: 155px; height: 334px; border-radius: 18px; }
-      .phone-frame::before { width: 34px; top: 6px; }
-      .phone-screen { border-radius: 16px; }
-
       .header-cta { display: none; }
 
       .install-section { padding: 80px 20px; }
+
+      .reason-screens { gap: 12px !important; }
+      .reason-screens > div { width: 155px !important; height: 334px !important; border-radius: 18px !important; }
     }
   </style>
 </head>
@@ -674,30 +690,22 @@
 
 <!-- ─── HERO ─── -->
 <section class="hero">
-  <div class="hero-eyebrow">
-    <span class="dot"></span>
-    オープンテスター募集中
+  <div class="hero-app-icon">
+    <img src="img/icon512.png" alt="ヤメッター アプリアイコン">
   </div>
-  <h1 class="hero-title">ヤメッター</h1>
+<h1 class="hero-title">ヤメッター</h1>
   <p class="hero-subtitle">集中タイマー × SNS</p>
-  <p class="hero-lead">
-    一人だとやっぱりスマホ見ちゃう。<br>
-    ヤメッターは、オンラインでつながったパートナーと<br>
-    一緒に集中タイムをがんばるアプリです。
-  </p>
-  <div class="hero-buttons">
+<div class="hero-buttons">
     <a href="#join" class="btn-primary">テスターとして参加する</a>
     <a href="#features" class="btn-secondary">詳しく見る</a>
   </div>
-  <p class="hero-note">「スマホをやめれば魚が育つ」ユーザーの方が対象です</p>
 </section>
 
 <!-- ─── LEAD / PROBLEM ─── -->
 <section class="lead-section">
   <div class="lead-inner">
     <p class="lead-quote">
-      魚は育てられるけど、<br>
-      <em>自分の集中力</em>はどう育てる？
+      もう<em>1人</em>でがんばらなくていい
     </p>
     <p class="lead-body">
       スマホを置く習慣はできてきた。でも、なんとなく「一人でやってる感」があって、
@@ -721,8 +729,15 @@
       <div class="reason-card">
         <p class="reason-number">1</p>
         <h3 class="reason-title">スマホの向こうに、ちゃんと人がいる</h3>
-        <div class="reason-icon"><img src="img/why1.png" alt=""></div>
-        <p class="reason-body">
+        <div class="reason-icon" style="width:100%; margin:0 auto; border-radius:16px; overflow:hidden; aspect-ratio:16/9;">
+          <iframe
+            src="https://www.youtube.com/embed/YWcFWQO9lpE?autoplay=1&mute=1&loop=1&playlist=YWcFWQO9lpE"
+            title="ヤメッター紹介動画"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="width:100%; height:100%; border:none; display:block;"></iframe>
+        </div>
+        <p class="reason-body" style="margin-top:28px;">
           キャラでもAIでもない、同じ目標を持つリアルな人間と集中タイムをシェア。
           「人」とつながっているという緊張感が、集中を別次元に引き上げます。
         </p>
@@ -730,19 +745,21 @@
 
       <div class="reason-card">
         <p class="reason-number">2</p>
-        <h3 class="reason-title">がんばった内容が一目でわかるグラフ</h3>
-        <div class="reason-icon"><img src="img/why2.png" alt=""></div>
-        <p class="reason-body">
-          集中した内容はグラフに記録されユーザー同士で閲覧可能。
-          自分の取り組みを他のユーザーにアピールできるから、
-          積み重ねるほど「やめられなく」なります。
-        </p>
-      </div>
-
-      <div class="reason-card">
-        <p class="reason-number">3</p>
-        <h3 class="reason-title">こんなSNSが欲しかった！</h3>
-        <div class="reason-icon"><img src="img/why3.png" alt=""></div>
+        <h3 class="reason-title">集中がつながりになる</h3>
+        <div class="reason-icon reason-screens" style="display:flex; gap:24px; justify-content:center;">
+          <div style="width:200px; height:432px; background:var(--text); border-radius:22px; padding:3px; position:relative; box-shadow:0 20px 40px rgba(16,32,67,0.22); flex-shrink:0;">
+            <div style="position:absolute; top:7px; left:50%; transform:translateX(-50%); width:44px; height:4px; background:rgba(255,255,255,0.18); border-radius:99px; z-index:1;"></div>
+            <div style="width:100%; height:100%; border-radius:20px; overflow:hidden; background:var(--bg);">
+              <img src="img/screen5.PNG" alt="スクリーンショット3" style="width:100%; height:100%; object-fit:cover; object-position:top; display:block;">
+            </div>
+          </div>
+          <div style="width:200px; height:432px; background:var(--text); border-radius:22px; padding:3px; position:relative; box-shadow:0 20px 40px rgba(16,32,67,0.22); flex-shrink:0;">
+            <div style="position:absolute; top:7px; left:50%; transform:translateX(-50%); width:44px; height:4px; background:rgba(255,255,255,0.18); border-radius:99px; z-index:1;"></div>
+            <div style="width:100%; height:100%; border-radius:20px; overflow:hidden; background:var(--bg);">
+              <img src="img/screen4.PNG" alt="スクリーンショット4" style="width:100%; height:100%; object-fit:cover; object-position:top; display:block;">
+            </div>
+          </div>
+        </div>
         <p class="reason-body">
           集中タイムが終わったら感想や画像をSNSにポスト。
           目標へ着実に進みながらSNS欲も満たす。
@@ -750,88 +767,34 @@
         </p>
       </div>
 
-    </div>
-  </div>
-</section>
-
-<!-- ─── SCREENSHOTS ─── -->
-<section class="screenshots-section">
-  <div class="section-inner">
-    <div class="screenshots-header">
-      <span class="section-tag">App Preview</span>
-      <h2 class="section-title">集中すればするほどプロフが充実</h2>
-      <p class="section-body" style="margin: 0 auto;">
-        集中すればするほどあなたのプロフィールが充実。フォロワーが増えていく設計です。あなたのがんばりが見やすいよう、タグ・グラフ・タイムライン、すべて
-        シンプルで使いやすいUIを追求しました。
-      </p>
-    </div>
-
-    <div class="phones-row">
-
-      <!-- Screen 1: タグ選択 -->
-      <div class="phone-wrap">
-        <div class="phone-frame">
-          <div class="phone-screen">
-            <!-- img src="img/screen1.png" alt="タグ選択画面" の画像を置いてください -->
-            <img src="img/screen1.png" alt="円グラフ"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="phone-placeholder" style="display:none;">
-              <div class="phone-placeholder-icon">🏷️</div>
-              <div class="phone-placeholder-text">円グラフ<br>img/screen1.png</div>
+      <div class="reason-card">
+        <p class="reason-number">3</p>
+        <h3 class="reason-title">努力はグラフでアピール</h3>
+        <div class="reason-icon reason-screens" style="display:flex; gap:24px; justify-content:center;">
+          <div style="width:200px; height:432px; background:var(--text); border-radius:22px; padding:3px; position:relative; box-shadow:0 20px 40px rgba(16,32,67,0.22); flex-shrink:0;">
+            <div style="position:absolute; top:7px; left:50%; transform:translateX(-50%); width:44px; height:4px; background:rgba(255,255,255,0.18); border-radius:99px; z-index:1;"></div>
+            <div style="width:100%; height:100%; border-radius:20px; overflow:hidden; background:var(--bg);">
+              <img src="img/screen1.PNG" alt="スクリーンショット1" style="width:100%; height:100%; object-fit:cover; object-position:top; display:block;">
+            </div>
+          </div>
+          <div style="width:200px; height:432px; background:var(--text); border-radius:22px; padding:3px; position:relative; box-shadow:0 20px 40px rgba(16,32,67,0.22); flex-shrink:0;">
+            <div style="position:absolute; top:7px; left:50%; transform:translateX(-50%); width:44px; height:4px; background:rgba(255,255,255,0.18); border-radius:99px; z-index:1;"></div>
+            <div style="width:100%; height:100%; border-radius:20px; overflow:hidden; background:var(--bg);">
+              <img src="img/screen2.PNG" alt="スクリーンショット2" style="width:100%; height:100%; object-fit:cover; object-position:top; display:block;">
             </div>
           </div>
         </div>
-        <span class="phone-caption">円グラフ</span>
-      </div>
-
-      <!-- Screen 2: タイマー -->
-      <div class="phone-wrap">
-        <div class="phone-frame">
-          <div class="phone-screen">
-            <img src="img/screen2.png" alt="棒グラフ"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="phone-placeholder" style="display:none;">
-              <div class="phone-placeholder-icon">⏱️</div>
-              <div class="phone-placeholder-text">棒グラフ<br>img/screen2.png</div>
-            </div>
-          </div>
-        </div>
-        <span class="phone-caption">棒グラフ</span>
-      </div>
-
-      <!-- Screen 3: タイムライン -->
-      <div class="phone-wrap">
-        <div class="phone-frame">
-          <div class="phone-screen">
-            <img src="img/screen3.png" alt="タグ選択"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="phone-placeholder" style="display:none;">
-              <div class="phone-placeholder-icon">📰</div>
-              <div class="phone-placeholder-text">タグ選択<br>img/screen3.png</div>
-            </div>
-          </div>
-        </div>
-        <span class="phone-caption">タグ選択</span>
-      </div>
-
-      <!-- Screen 4: パートナー検索 -->
-      <div class="phone-wrap">
-        <div class="phone-frame">
-          <div class="phone-screen">
-            <img src="img/screen4.png" alt="タイムライン"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="phone-placeholder" style="display:none;">
-              <div class="phone-placeholder-icon">🔍</div>
-              <div class="phone-placeholder-text">タイムライン<br>img/screen4.png</div>
-            </div>
-          </div>
-        </div>
-        <span class="phone-caption">タイムライン</span>
+        <p class="reason-body">
+          集中した内容はグラフに記録されユーザー同士で閲覧可能。
+          自分の取り組みを他のユーザーにアピールできるから、
+          積み重ねるほど「やめられなく」なります。
+        </p>
       </div>
 
     </div>
   </div>
 </section>
+
 
 <!-- ─── VIDEO ─── -->
 <section class="video-section">
@@ -848,19 +811,12 @@
         例: https://www.youtube.com/watch?v=XXXXXXXXX の場合
         → src="https://www.youtube.com/embed/XXXXXXXXX"
       -->
-      <!--
       <iframe
-        src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+        src="https://www.youtube.com/embed/YWcFWQO9lpE"
         title="ヤメッター紹介動画"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
       </iframe>
-      -->
-      <div class="video-placeholder">
-        <div class="video-play">▶</div>
-        <p style="font-weight:800; font-size:1rem;">紹介ムービー（近日公開）</p>
-        <p class="video-placeholder-text">YouTube IDを設定してください</p>
-      </div>
     </div>
   </div>
 </section>
