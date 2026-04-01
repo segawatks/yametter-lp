@@ -54,8 +54,9 @@
     }
 
     .header-badge {
-      background: var(--accent);
-      color: #fff;
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
       font-size: 0.7rem;
       font-weight: 700;
       padding: 3px 10px;
@@ -684,7 +685,7 @@
     <span class="header-logo">ヤメッター</span>
     <span class="header-badge">BETA</span>
   </div>
-  <a href="#join" class="header-cta">テスターに応募</a>
+  <a href="#join" class="header-cta">インストール</a>
 </header>
 
 <!-- ─── HERO ─── -->
@@ -692,11 +693,10 @@
   <div class="hero-app-icon">
     <img src="img/icon512.png" alt="ヤメッター アプリアイコン">
   </div>
-<h1 class="hero-title">ヤメッター</h1>
+<h1 class="hero-title" style="display:inline-flex; align-items:center; gap:12px;">ヤメッター<span class="header-badge" style="font-size:0.3em; padding:5px 14px;">BETA</span></h1>
   <p class="hero-subtitle">SNS<br>×<br>集中タイマー</p>
 <div class="hero-buttons">
-    <a href="#join" class="btn-primary">テスターとして参加する</a>
-    <a href="#features" class="btn-secondary">詳しく見る</a>
+    <a href="#join" class="btn-primary">インストール</a>
   </div>
 </section>
 
@@ -778,7 +778,7 @@
       </div>
 
       <div class="reason-card">
-        <h3 class="reason-title">人に見られるから<br><em>やるしかない</em></h3>
+        <h3 class="reason-title">見られるから<br><em>やるしかない</em></h3>
         <div class="reason-icon reason-screens" style="display:flex; gap:24px; justify-content:center;">
           <div style="width:200px; height:432px; border:2px solid rgba(47,85,138,0.2); border-radius:22px; position:relative; flex-shrink:0; overflow:hidden;">
             <div style="width:100%; height:100%; border-radius:20px; overflow:hidden; background:var(--bg);">
