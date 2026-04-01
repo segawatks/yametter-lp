@@ -729,25 +729,13 @@
         <p class="reason-number">1</p>
         <h3 class="reason-title">スマホの向こうに、ちゃんと人がいる</h3>
         <div class="reason-icon" style="width:100%; margin:0 auto; border-radius:16px; overflow:hidden; aspect-ratio:16/9; position:relative;">
-          <iframe
-            id="ytPlayer"
-            src="https://www.youtube.com/embed/YWcFWQO9lpE?autoplay=1&mute=1&loop=1&playlist=YWcFWQO9lpE&controls=0&modestbranding=1&rel=0&iv_load_policy=3&enablejsapi=1"
-            title="ヤメッター紹介動画"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            style="width:100%; height:100%; border:none; display:block;"></iframe>
+          <video id="heroVideo" src="img/yametterPV0.mp4" autoplay muted loop playsinline
+            style="width:100%; height:100%; object-fit:cover; display:block;"></video>
           <button id="muteBtn" onclick="
-            var iframe = document.getElementById('ytPlayer');
-            var muted = this.dataset.muted === '1';
-            if (muted) {
-              iframe.contentWindow.postMessage('{&quot;event&quot;:&quot;command&quot;,&quot;func&quot;:&quot;unMute&quot;,&quot;args&quot;:[]}', '*');
-              this.querySelector('img').src = 'img/on.png';
-              this.dataset.muted = '0';
-            } else {
-              iframe.contentWindow.postMessage('{&quot;event&quot;:&quot;command&quot;,&quot;func&quot;:&quot;mute&quot;,&quot;args&quot;:[]}', '*');
-              this.querySelector('img').src = 'img/off.png';
-              this.dataset.muted = '1';
-            }
-          " data-muted="1" style="
+            var v = document.getElementById('heroVideo');
+            v.muted = !v.muted;
+            this.querySelector('img').src = v.muted ? 'img/off.png' : 'img/on.png';
+          " style="
             position:absolute;
             bottom:12px;
             right:12px;
