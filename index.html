@@ -356,6 +356,11 @@
       line-height: 1.3;
     }
 
+    .reason-title em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
     .reason-body {
       font-size: 0.88rem;
       color: var(--text);
@@ -728,8 +733,7 @@
     <div class="reasons-grid">
 
       <div class="reason-card">
-        <p class="reason-number">1</p>
-        <h3 class="reason-title">スマホの向こうに、ちゃんと人がいる</h3>
+        <h3 class="reason-title">スマホの向こうに<br>ちゃんと<em>人</em>がいる</h3>
         <div class="reason-icon" style="width:100%; margin:0 auto; border-radius:16px; overflow:hidden; aspect-ratio:16/9; position:relative;">
           <video id="heroVideo" src="img/yametterPV0.mp4" autoplay muted loop playsinline
             style="width:100%; height:100%; object-fit:cover; display:block;"></video>
@@ -739,8 +743,8 @@
             this.querySelector('img').src = v.muted ? 'img/off.png' : 'img/on.png';
           " style="
             position:absolute;
-            bottom:12px;
-            right:12px;
+            top:12px;
+            left:12px;
             width:36px;
             height:36px;
             border-radius:50%;
@@ -762,17 +766,14 @@
       </div>
 
       <div class="reason-card">
-        <p class="reason-number">2</p>
-        <h3 class="reason-title">集中がつながりになる</h3>
+        <h3 class="reason-title">集中したあとは<br><em>SNS</em>でつながれる</h3>
         <div class="reason-icon reason-screens" style="display:flex; gap:24px; justify-content:center;">
-          <div style="width:200px; height:432px; background:var(--text); border-radius:22px; padding:3px; position:relative; box-shadow:0 20px 40px rgba(16,32,67,0.22); flex-shrink:0;">
-            <div style="position:absolute; top:7px; left:50%; transform:translateX(-50%); width:44px; height:4px; background:rgba(255,255,255,0.18); border-radius:99px; z-index:1;"></div>
+          <div style="width:200px; height:432px; border:2px solid rgba(47,85,138,0.2); border-radius:22px; position:relative; flex-shrink:0; overflow:hidden;">
             <div style="width:100%; height:100%; border-radius:20px; overflow:hidden; background:var(--bg);">
               <img src="img/screen5.png" alt="スクリーンショット3" style="width:100%; height:100%; object-fit:cover; object-position:top; display:block;">
             </div>
           </div>
-          <div style="width:200px; height:432px; background:var(--text); border-radius:22px; padding:3px; position:relative; box-shadow:0 20px 40px rgba(16,32,67,0.22); flex-shrink:0;">
-            <div style="position:absolute; top:7px; left:50%; transform:translateX(-50%); width:44px; height:4px; background:rgba(255,255,255,0.18); border-radius:99px; z-index:1;"></div>
+          <div style="width:200px; height:432px; border:2px solid rgba(47,85,138,0.2); border-radius:22px; position:relative; flex-shrink:0; overflow:hidden;">
             <div style="width:100%; height:100%; border-radius:20px; overflow:hidden; background:var(--bg);">
               <img src="img/screen4.png" alt="スクリーンショット4" style="width:100%; height:100%; object-fit:cover; object-position:top; display:block;">
             </div>
@@ -786,17 +787,14 @@
       </div>
 
       <div class="reason-card">
-        <p class="reason-number">3</p>
-        <h3 class="reason-title">努力はグラフでアピール</h3>
+        <h3 class="reason-title">人に見られるから<br><em>やるしかない</em></h3>
         <div class="reason-icon reason-screens" style="display:flex; gap:24px; justify-content:center;">
-          <div style="width:200px; height:432px; background:var(--text); border-radius:22px; padding:3px; position:relative; box-shadow:0 20px 40px rgba(16,32,67,0.22); flex-shrink:0;">
-            <div style="position:absolute; top:7px; left:50%; transform:translateX(-50%); width:44px; height:4px; background:rgba(255,255,255,0.18); border-radius:99px; z-index:1;"></div>
+          <div style="width:200px; height:432px; border:2px solid rgba(47,85,138,0.2); border-radius:22px; position:relative; flex-shrink:0; overflow:hidden;">
             <div style="width:100%; height:100%; border-radius:20px; overflow:hidden; background:var(--bg);">
               <img src="img/screen1.png" alt="スクリーンショット1" style="width:100%; height:100%; object-fit:cover; object-position:top; display:block;">
             </div>
           </div>
-          <div style="width:200px; height:432px; background:var(--text); border-radius:22px; padding:3px; position:relative; box-shadow:0 20px 40px rgba(16,32,67,0.22); flex-shrink:0;">
-            <div style="position:absolute; top:7px; left:50%; transform:translateX(-50%); width:44px; height:4px; background:rgba(255,255,255,0.18); border-radius:99px; z-index:1;"></div>
+          <div style="width:200px; height:432px; border:2px solid rgba(47,85,138,0.2); border-radius:22px; position:relative; flex-shrink:0; overflow:hidden;">
             <div style="width:100%; height:100%; border-radius:20px; overflow:hidden; background:var(--bg);">
               <img src="img/screen2.png" alt="スクリーンショット2" style="width:100%; height:100%; object-fit:cover; object-position:top; display:block;">
             </div>
