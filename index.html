@@ -586,14 +586,60 @@
     .step-line {
       width: 2px;
       flex: 1;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.15);
       margin-top: 8px;
     }
 
     .install-step:last-child .step-line { display: none; }
 
     .step-content {
-      padding-top: 8px;
+      padding-top: 6px;
+    }
+
+    /* ─── スケジュール日付バッジ ─── */
+    .schedule-date {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 14px;
+      padding: 10px 14px;
+      text-align: center;
+      min-width: 72px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+    .schedule-date .s-month {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.04em;
+    }
+    .schedule-date .s-day {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+    }
+    .schedule-date .s-week {
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── 参加カウンター ─── */
+    .hand-count-box {
+      display: block;
+      margin-top: 12px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.8);
+    }
+    .hand-count-box .count-num {
+      font-weight: 900;
+      color: #fff;
     }
 
     .step-title {
@@ -803,7 +849,8 @@
 </section>
 
 
-<!-- ─── VIDEO ─── -->
+<!--
+  ─── VIDEO（2個目・後日復活） ───
 <section class="video-section">
   <div class="section-inner">
     <span class="section-tag">Preview Video</span>
@@ -811,13 +858,7 @@
     <p class="section-body" style="margin: 0 auto;">
       アプリの使い方と世界観を、ショートムービーで紹介しています。
     </p>
-
     <div class="video-wrap">
-      <!--
-        YouTubeの動画IDを取得して以下のsrcを更新してください。
-        例: https://www.youtube.com/watch?v=XXXXXXXXX の場合
-        → src="https://www.youtube.com/embed/XXXXXXXXX"
-      -->
       <iframe
         src="https://www.youtube.com/embed/YWcFWQO9lpE"
         title="ヤメッター紹介動画"
@@ -827,27 +868,114 @@
     </div>
   </div>
 </section>
+-->
 
-<!-- ─── RAISE HAND ─── -->
-<section style="padding: 80px 24px; text-align:center;">
-  <div style="max-width:480px; margin:0 auto;">
-    <p style="font-size:1.1rem; font-weight:700; color:var(--text); margin-bottom:24px; line-height:1.8;">
-      テストに参加していただける方、<br>ぜひ挙手してください 👇
+<!--
+  ─── HOW TO INSTALL（後日復活） ───
+<section class="install-section" id="install">
+  <div class="install-inner">
+    <span class="install-title-tag">HOW TO JOIN</span>
+    <h2 class="install-title">ヤメッターbetaをインストール</h2>
+    <p class="install-lead">
+      テスト版配布用のアプリをインストールしてSafariでリンクを開くとインストールできます。
     </p>
-    <button id="raiseHandBtn" onclick="raiseHand()" style="
-      background: var(--primary);
-      color: #fff;
-      font-size: 1.1rem;
-      font-weight: 800;
-      padding: 18px 48px;
-      border-radius: 99px;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 8px 24px rgba(47,85,138,0.3);
-      transition: transform 0.2s, opacity 0.2s;
-      letter-spacing: 0.02em;
-    ">🙋 参加したい！</button>
-    <p id="handCount" style="margin-top:20px; font-size:0.85rem; color:var(--text); min-height:1.5em;">…</p>
+    <div style="margin-top: 48px; text-align: center;">
+      <a href="https://testflight.apple.com/join/REPLACE_WITH_YOUR_ID" id="join" class="btn-primary" target="_blank" rel="noopener" style="background:#fff; color:var(--primary); box-shadow:0 8px 24px rgba(0,0,0,0.15);">
+        TestFlightでインストールする
+      </a>
+    </div>
+  </div>
+</section>
+-->
+
+<!-- ─── SCHEDULE ─── -->
+<section class="install-section" id="schedule">
+  <div class="install-inner">
+    <span class="install-title-tag">SCHEDULE</span>
+    <h2 class="install-title">公開スケジュール</h2>
+
+    <div class="install-steps">
+
+      <div class="install-step">
+        <div class="step-left">
+          <div class="schedule-date">
+            <span class="s-month">4月</span>
+            <span class="s-day">9</span>
+            <span class="s-week">木</span>
+          </div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <p class="step-title">ヤメッター紹介サイト（このサイト）を公開</p>
+          <p class="step-body">テストに参加していただける方は、下のボタンをタップしてください。</p>
+          <div style="margin-top:20px;">
+            <button id="raiseHandBtn" onclick="raiseHand()" style="
+              background: #fff;
+              color: var(--primary);
+              font-size: 1rem;
+              font-weight: 800;
+              padding: 14px 36px;
+              border-radius: 99px;
+              border: none;
+              cursor: pointer;
+              box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+              transition: transform 0.2s, opacity 0.2s;
+              letter-spacing: 0.02em;
+            ">🙋 参加します</button>
+            <div class="hand-count-box">
+              <span>現在</span>
+              <span class="count-num" id="handCountNum">–</span>
+              <span>人が参加表明中</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="install-step">
+        <div class="step-left">
+          <div class="schedule-date">
+            <span class="s-month">4月</span>
+            <span class="s-day">14</span>
+            <span class="s-week">火</span>
+          </div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <p class="step-title">ヤメッター Beta版ダウンロード開始</p>
+          <p class="step-body">公開時は1人で集中モードのみ使用可能です。ある程度ユーザー数が集まらないとパートナーが見つからないため、まずはソロモードからスタートします。</p>
+        </div>
+      </div>
+
+      <div class="install-step">
+        <div class="step-left">
+          <div class="schedule-date">
+            <span class="s-month">4月</span>
+            <span class="s-day">17</span>
+            <span class="s-week">水</span>
+          </div>
+          <div class="step-line"></div>
+        </div>
+        <div class="step-content">
+          <p class="step-title">18時よりパートナー検索機能 提供開始</p>
+          <p class="step-body">オンラインのパートナーと一緒に集中タイムをスタートできるようになります。</p>
+        </div>
+      </div>
+
+      <div class="install-step">
+        <div class="step-left">
+          <div class="schedule-date">
+            <span class="s-month">4月</span>
+            <span class="s-day">19</span>
+            <span class="s-week">日</span>
+          </div>
+        </div>
+        <div class="step-content">
+          <p class="step-title">24:00 パートナー検索機能を一旦停止</p>
+          <p class="step-body">メンテナンス・バグ修正のため、パートナー検索機能を一時停止します。再開時期はアプリ内でお知らせします。</p>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -858,17 +986,14 @@
   function hasCookie() {
     return document.cookie.split(';').some(c => c.trim().startsWith(COOKIE + '='));
   }
-
   function setCookie() {
     const d = new Date();
     d.setFullYear(d.getFullYear() + 1);
     document.cookie = COOKIE + '=1; expires=' + d.toUTCString() + '; path=/; SameSite=Lax';
   }
-
   function setCount(n) {
-    document.getElementById('handCount').textContent = n + ' 人が参加表明しています';
+    document.getElementById('handCountNum').textContent = n;
   }
-
   async function raiseHand() {
     if (hasCookie()) return;
     const btn = document.getElementById('raiseHandBtn');
@@ -883,14 +1008,13 @@
       setCount(data.count);
     } catch(e) {}
   }
-
   (async () => {
     try {
       const res = await fetch(API + '/get');
       const data = await res.json();
       setCount(data.count);
     } catch(e) {
-      document.getElementById('handCount').textContent = '';
+      document.getElementById('handCountNum').textContent = '–';
     }
     if (hasCookie()) {
       const btn = document.getElementById('raiseHandBtn');
@@ -901,83 +1025,6 @@
     }
   })();
 </script>
-
-<!-- ─── HOW TO INSTALL ─── -->
-<section class="install-section" id="install">
-  <div class="install-inner">
-    <span class="install-title-tag">HOW TO JOIN</span>
-    <h2 class="install-title">ヤメッターbetaをインストール</h2>
-    <p class="install-lead">
-      <a href="https://apps.apple.com/jp/app/testflight/id899247664" target="_blank" rel="noopener">テスト版配布用のアプリ</a>をインストールして<b style="color:var(--accent);">Safari</b>で<a href="https://testflight.apple.com/join/REPLACE_WITH_YOUR_ID" target="_blank" rel="noopener">リンクを開く</a>とインストールできます。<br>
-    </p>
-
-    <div class="install-steps">
-
-      <div class="install-step">
-        <div class="step-left">
-          <div class="step-num">1</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-content">
-          <p class="step-title">TestFlightをApp Storeからインストール</p>
-          <p class="step-body">
-            Appleが提供する公式のテストアプリです。
-            <a href="https://apps.apple.com/jp/app/testflight/id899247664" target="_blank" rel="noopener">App Storeのページ →</a>
-          </p>
-        </div>
-      </div>
-
-      <div class="install-step">
-        <div class="step-left">
-          <div class="step-num">2</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-content">
-          <p class="step-title">下のボタンから招待リンクを開く<b style="color:var(--accent); margin-left:4px;">(要Safari)</b></p>
-          <p class="step-body">
-            iPhoneのSafariでリンクを開いてください。
-            ChromeなどではTestFlightが起動しない場合があります。
-          </p>
-        </div>
-      </div>
-
-      <div class="install-step">
-        <div class="step-left">
-          <div class="step-num">3</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-content">
-          <p class="step-title">「承認」をタップしてインストール</p>
-          <p class="step-body">
-            TestFlightが自動で起動し、インストール画面に進みます。
-            「承認」→「インストール」の順にタップすれば完了です。
-          </p>
-        </div>
-      </div>
-
-      <div class="install-step">
-        <div class="step-left">
-          <div class="step-num">4</div>
-          <div class="step-line"></div>
-        </div>
-        <div class="step-content">
-          <p class="step-title">フィードバックを送ってください</p>
-          <p class="step-body">
-            バグや改善点があればアプリ内またはTestFlight経由でご連絡ください。
-            あなたのフィードバックが正式リリースをよりよくします。
-          </p>
-        </div>
-      </div>
-
-      <div style="margin-top: 48px; text-align: center;">
-        <a href="https://testflight.apple.com/join/REPLACE_WITH_YOUR_ID" id="join" class="btn-primary" target="_blank" rel="noopener" style="background:#fff; color:var(--primary); box-shadow:0 8px 24px rgba(0,0,0,0.15);">
-          TestFlightでインストールする
-        </a>
-        <p style="margin-top:16px; font-size:0.75rem; color:rgba(255,255,255,0.7);">iOS専用 ／ 無料 ／ いつでも退会できます</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ─── FOOTER ─── -->
 <footer>
