@@ -618,33 +618,49 @@
     }
     .sched-card-head {
       background: var(--primary);
-      padding: 16px 20px 14px;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 16px;
+    }
+    .sched-date-block {
       display: flex;
       flex-direction: column;
-      gap: 2px;
-    }
-    .sched-card-head .s-week {
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--accent);
-      letter-spacing: 0.04em;
+      align-items: center;
+      flex-shrink: 0;
+      min-width: 56px;
+      border-right: 1px solid rgba(255,255,255,0.2);
+      padding-right: 16px;
+      gap: 1px;
     }
     .sched-card-head .s-date {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: 900;
       color: #fff;
-      line-height: 1.1;
+      line-height: 1.2;
       letter-spacing: -0.02em;
     }
-    .sched-card-body {
-      padding: 18px 20px 24px;
+    .sched-card-head .s-week {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+    }
+    .sched-card-head .s-time {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.75);
     }
     .sched-card-title {
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 800;
-      color: var(--text);
-      margin-bottom: 8px;
-      line-height: 1.4;
+      color: #fff;
+      line-height: 1.45;
+      flex: 1;
+    }
+    .sched-card-body {
+      padding: 16px 20px 22px;
     }
     .sched-card-desc {
       font-size: 0.88rem;
@@ -754,7 +770,7 @@
     <span class="header-logo">ヤメッター</span>
     <span class="header-badge">BETA</span>
   </div>
-  <a href="#join" class="header-cta">インストール</a>
+  <a href="#schedule" class="header-cta">最新情報</a>
 </header>
 
 <!-- ─── HERO ─── -->
@@ -917,19 +933,22 @@
     <div style="text-align:center; margin-bottom:8px;">
       <span class="section-tag">SCHEDULE</span>
     </div>
-    <h2 class="section-title" style="text-align:center;">公開スケジュール</h2>
+    <h2 class="section-title" style="text-align:center;">スケジュール</h2>
+    <p class="section-body" style="text-align:center; margin: 0 auto;">状況により変更される場合があります。</p>
 
     <div class="sched-list">
 
       <div class="sched-card">
         <div class="sched-card-head">
-          <span class="s-week">木曜日</span>
-          <span class="s-date">4月9日</span>
+          <div class="sched-date-block">
+            <span class="s-date">4/9</span>
+            <span class="s-week">木曜日</span>
+          </div>
+          <p class="sched-card-title">ヤメッターBeta版ユーザー募集開始</p>
         </div>
         <div class="sched-card-body">
-          <p class="sched-card-title">ヤメッター紹介サイト（このサイト）を公開</p>
-          <p class="sched-card-desc">テストに参加していただける方は、下のボタンをタップしてください。</p>
-          <div style="margin-top:20px;">
+          <p class="sched-card-desc">事前に参加予定人数を確認したいので、Beta版のダウンロードを前向きに検討していただける場合は下のボタンをタップしていただくとありがたいです。</p>
+          <div style="margin-top:20px; text-align:center;">
             <button id="raiseHandBtn" onclick="raiseHand()" style="
               background: var(--primary);
               color: #fff;
@@ -943,7 +962,7 @@
               transition: transform 0.2s, opacity 0.2s;
               letter-spacing: 0.02em;
             ">🙋 参加します</button>
-            <div class="hand-count-box">
+            <div class="hand-count-box" style="text-align:center;">
               現在 <span class="count-num" id="handCountNum">–</span> 人が参加表明中
             </div>
           </div>
@@ -952,34 +971,42 @@
 
       <div class="sched-card">
         <div class="sched-card-head">
-          <span class="s-week">火曜日</span>
-          <span class="s-date">4月14日</span>
-        </div>
-        <div class="sched-card-body">
+          <div class="sched-date-block">
+            <span class="s-date">4/14</span>
+            <span class="s-week">火曜日</span>
+          </div>
           <p class="sched-card-title">ヤメッター Beta版ダウンロード開始</p>
-          <p class="sched-card-desc">公開時は1人で集中モードのみ使用可能です。ある程度ユーザー数が集まらないとパートナーが見つからないため、まずはソロモードからスタートします。</p>
+        </div>
+        <div class="sched-card-body">
+          <p class="sched-card-desc">こちらのサイトにダウンロードリンクを掲載します。スマやめにも通知を送信します。公開後数日はユーザーが少なくパートナーが見つからないはずですので「1人で集中モード」のみ使用可能です。</p>
         </div>
       </div>
 
       <div class="sched-card">
         <div class="sched-card-head">
-          <span class="s-week">水曜日 18:00〜</span>
-          <span class="s-date">4月17日</span>
-        </div>
-        <div class="sched-card-body">
+          <div class="sched-date-block">
+            <span class="s-date">4/17</span>
+            <span class="s-week">金曜日</span>
+            <span class="s-time">18:00</span>
+          </div>
           <p class="sched-card-title">パートナー検索機能 提供開始</p>
-          <p class="sched-card-desc">オンラインのパートナーと一緒に集中タイムをスタートできるようになります。</p>
+        </div>
+        <div class="sched-card-body">
+          <p class="sched-card-desc">比較的ユーザー数が安定すると予想される金曜の18時から日曜の24時までパートナー検索の解放を予定しています。<strong>バグでの中断や混乱がほぼ確実に「ある」と思います。</strong></p>
         </div>
       </div>
 
       <div class="sched-card">
         <div class="sched-card-head">
-          <span class="s-week">日曜日 24:00</span>
-          <span class="s-date">4月19日</span>
+          <div class="sched-date-block">
+            <span class="s-date">4/19</span>
+            <span class="s-week">日曜日</span>
+            <span class="s-time">24:00</span>
+          </div>
+          <p class="sched-card-title">パートナー検索機能を一旦停止</p>
         </div>
         <div class="sched-card-body">
-          <p class="sched-card-title">パートナー検索機能を一旦停止</p>
-          <p class="sched-card-desc">メンテナンス・バグ修正のため、パートナー検索機能を一時停止します。再開時期はアプリ内でお知らせします。</p>
+          <p class="sched-card-desc">メンテナンス・バグ修正のため、パートナー検索機能を一時停止します。再開時期や詳細はこちらのサイトやアプリ内でお知らせします。</p>
         </div>
       </div>
 
