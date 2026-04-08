@@ -596,50 +596,73 @@
       padding-top: 6px;
     }
 
-    /* ─── スケジュール日付バッジ ─── */
-    .schedule-date {
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 14px;
-      padding: 10px 14px;
-      text-align: center;
-      min-width: 72px;
-      flex-shrink: 0;
+    /* ─── SCHEDULE ─── */
+    .sched-section {
+      background: var(--bg);
+      padding: 96px 24px;
+    }
+    .sched-list {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      gap: 16px;
+      margin-top: 48px;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .sched-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(16,32,67,0.08);
+    }
+    .sched-card-head {
+      background: var(--primary);
+      padding: 16px 20px 14px;
+      display: flex;
+      flex-direction: column;
       gap: 2px;
     }
-    .schedule-date .s-month {
-      font-size: 0.68rem;
+    .sched-card-head .s-week {
+      font-size: 0.72rem;
       font-weight: 700;
-      color: rgba(255,255,255,0.7);
+      color: var(--accent);
       letter-spacing: 0.04em;
     }
-    .schedule-date .s-day {
-      font-size: 2rem;
+    .sched-card-head .s-date {
+      font-size: 1.5rem;
       font-weight: 900;
       color: #fff;
-      line-height: 1;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
     }
-    .schedule-date .s-week {
-      font-size: 0.68rem;
+    .sched-card-body {
+      padding: 18px 20px 24px;
+    }
+    .sched-card-title {
+      font-size: 1rem;
       font-weight: 800;
-      color: var(--accent);
-      letter-spacing: 0.05em;
+      color: var(--text);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .sched-card-desc {
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.85;
     }
 
     /* ─── 参加カウンター ─── */
     .hand-count-box {
       display: block;
-      margin-top: 12px;
-      font-size: 0.88rem;
+      margin-top: 10px;
+      font-size: 0.85rem;
       font-weight: 700;
-      color: rgba(255,255,255,0.8);
+      color: var(--text);
     }
     .hand-count-box .count-num {
       font-weight: 900;
-      color: #fff;
+      color: var(--primary);
     }
 
     .step-title {
@@ -889,89 +912,74 @@
 -->
 
 <!-- ─── SCHEDULE ─── -->
-<section class="install-section" id="schedule">
-  <div class="install-inner">
-    <span class="install-title-tag">SCHEDULE</span>
-    <h2 class="install-title">公開スケジュール</h2>
+<section class="sched-section" id="schedule">
+  <div class="section-inner">
+    <div style="text-align:center; margin-bottom:8px;">
+      <span class="section-tag">SCHEDULE</span>
+    </div>
+    <h2 class="section-title" style="text-align:center;">公開スケジュール</h2>
 
-    <div class="install-steps">
+    <div class="sched-list">
 
-      <div class="install-step">
-        <div class="step-left">
-          <div class="schedule-date">
-            <span class="s-month">4月</span>
-            <span class="s-day">9</span>
-            <span class="s-week">木</span>
-          </div>
-          <div class="step-line"></div>
+      <div class="sched-card">
+        <div class="sched-card-head">
+          <span class="s-week">木曜日</span>
+          <span class="s-date">4月9日</span>
         </div>
-        <div class="step-content">
-          <p class="step-title">ヤメッター紹介サイト（このサイト）を公開</p>
-          <p class="step-body">テストに参加していただける方は、下のボタンをタップしてください。</p>
+        <div class="sched-card-body">
+          <p class="sched-card-title">ヤメッター紹介サイト（このサイト）を公開</p>
+          <p class="sched-card-desc">テストに参加していただける方は、下のボタンをタップしてください。</p>
           <div style="margin-top:20px;">
             <button id="raiseHandBtn" onclick="raiseHand()" style="
-              background: #fff;
-              color: var(--primary);
+              background: var(--primary);
+              color: #fff;
               font-size: 1rem;
               font-weight: 800;
               padding: 14px 36px;
               border-radius: 99px;
               border: none;
               cursor: pointer;
-              box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+              box-shadow: 0 6px 20px rgba(47,85,138,0.3);
               transition: transform 0.2s, opacity 0.2s;
               letter-spacing: 0.02em;
             ">🙋 参加します</button>
             <div class="hand-count-box">
-              <span>現在</span>
-              <span class="count-num" id="handCountNum">–</span>
-              <span>人が参加表明中</span>
+              現在 <span class="count-num" id="handCountNum">–</span> 人が参加表明中
             </div>
           </div>
         </div>
       </div>
 
-      <div class="install-step">
-        <div class="step-left">
-          <div class="schedule-date">
-            <span class="s-month">4月</span>
-            <span class="s-day">14</span>
-            <span class="s-week">火</span>
-          </div>
-          <div class="step-line"></div>
+      <div class="sched-card">
+        <div class="sched-card-head">
+          <span class="s-week">火曜日</span>
+          <span class="s-date">4月14日</span>
         </div>
-        <div class="step-content">
-          <p class="step-title">ヤメッター Beta版ダウンロード開始</p>
-          <p class="step-body">公開時は1人で集中モードのみ使用可能です。ある程度ユーザー数が集まらないとパートナーが見つからないため、まずはソロモードからスタートします。</p>
+        <div class="sched-card-body">
+          <p class="sched-card-title">ヤメッター Beta版ダウンロード開始</p>
+          <p class="sched-card-desc">公開時は1人で集中モードのみ使用可能です。ある程度ユーザー数が集まらないとパートナーが見つからないため、まずはソロモードからスタートします。</p>
         </div>
       </div>
 
-      <div class="install-step">
-        <div class="step-left">
-          <div class="schedule-date">
-            <span class="s-month">4月</span>
-            <span class="s-day">17</span>
-            <span class="s-week">水</span>
-          </div>
-          <div class="step-line"></div>
+      <div class="sched-card">
+        <div class="sched-card-head">
+          <span class="s-week">水曜日 18:00〜</span>
+          <span class="s-date">4月17日</span>
         </div>
-        <div class="step-content">
-          <p class="step-title">18時よりパートナー検索機能 提供開始</p>
-          <p class="step-body">オンラインのパートナーと一緒に集中タイムをスタートできるようになります。</p>
+        <div class="sched-card-body">
+          <p class="sched-card-title">パートナー検索機能 提供開始</p>
+          <p class="sched-card-desc">オンラインのパートナーと一緒に集中タイムをスタートできるようになります。</p>
         </div>
       </div>
 
-      <div class="install-step">
-        <div class="step-left">
-          <div class="schedule-date">
-            <span class="s-month">4月</span>
-            <span class="s-day">19</span>
-            <span class="s-week">日</span>
-          </div>
+      <div class="sched-card">
+        <div class="sched-card-head">
+          <span class="s-week">日曜日 24:00</span>
+          <span class="s-date">4月19日</span>
         </div>
-        <div class="step-content">
-          <p class="step-title">24:00 パートナー検索機能を一旦停止</p>
-          <p class="step-body">メンテナンス・バグ修正のため、パートナー検索機能を一時停止します。再開時期はアプリ内でお知らせします。</p>
+        <div class="sched-card-body">
+          <p class="sched-card-title">パートナー検索機能を一旦停止</p>
+          <p class="sched-card-desc">メンテナンス・バグ修正のため、パートナー検索機能を一時停止します。再開時期はアプリ内でお知らせします。</p>
         </div>
       </div>
 
