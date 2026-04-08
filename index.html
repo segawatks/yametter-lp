@@ -807,7 +807,7 @@
 <section class="video-section">
   <div class="section-inner">
     <span class="section-tag">Preview Video</span>
-    <h2 class="section-title">1分でわかる、ヤメッター</h2>
+    <h2 class="section-title">ヤメッターBeta版テストご参加のお願い🙇</h2>
     <p class="section-body" style="margin: 0 auto;">
       アプリの使い方と世界観を、ショートムービーで紹介しています。
     </p>
@@ -827,6 +827,80 @@
     </div>
   </div>
 </section>
+
+<!-- ─── RAISE HAND ─── -->
+<section style="padding: 80px 24px; text-align:center;">
+  <div style="max-width:480px; margin:0 auto;">
+    <p style="font-size:1.1rem; font-weight:700; color:var(--text); margin-bottom:24px; line-height:1.8;">
+      テストに参加していただける方、<br>ぜひ挙手してください 👇
+    </p>
+    <button id="raiseHandBtn" onclick="raiseHand()" style="
+      background: var(--primary);
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 800;
+      padding: 18px 48px;
+      border-radius: 99px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(47,85,138,0.3);
+      transition: transform 0.2s, opacity 0.2s;
+      letter-spacing: 0.02em;
+    ">🙋 参加したい！</button>
+    <p id="handCount" style="margin-top:20px; font-size:0.85rem; color:var(--text); min-height:1.5em;">…</p>
+  </div>
+</section>
+
+<script>
+  const COOKIE = 'yametter_raised';
+  const API = 'https://api.counterapi.dev/v1/yametter-lp-2026/testers';
+
+  function hasCookie() {
+    return document.cookie.split(';').some(c => c.trim().startsWith(COOKIE + '='));
+  }
+
+  function setCookie() {
+    const d = new Date();
+    d.setFullYear(d.getFullYear() + 1);
+    document.cookie = COOKIE + '=1; expires=' + d.toUTCString() + '; path=/; SameSite=Lax';
+  }
+
+  function setCount(n) {
+    document.getElementById('handCount').textContent = n + ' 人が参加表明しています';
+  }
+
+  async function raiseHand() {
+    if (hasCookie()) return;
+    const btn = document.getElementById('raiseHandBtn');
+    btn.disabled = true;
+    btn.style.opacity = '0.6';
+    btn.style.cursor = 'default';
+    btn.textContent = '✅ ありがとうございます！';
+    setCookie();
+    try {
+      const res = await fetch(API + '/up');
+      const data = await res.json();
+      setCount(data.count);
+    } catch(e) {}
+  }
+
+  (async () => {
+    try {
+      const res = await fetch(API + '/get');
+      const data = await res.json();
+      setCount(data.count);
+    } catch(e) {
+      document.getElementById('handCount').textContent = '';
+    }
+    if (hasCookie()) {
+      const btn = document.getElementById('raiseHandBtn');
+      btn.disabled = true;
+      btn.style.opacity = '0.6';
+      btn.style.cursor = 'default';
+      btn.textContent = '✅ 参加表明済み';
+    }
+  })();
+</script>
 
 <!-- ─── HOW TO INSTALL ─── -->
 <section class="install-section" id="install">
