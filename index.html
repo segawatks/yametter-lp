@@ -1062,7 +1062,7 @@
   }
   async function fetchCount() {
     try {
-      const res = await fetch(API + '/get');
+      const res = await fetch(API);
       const data = await res.json();
       if (typeof data.count === 'number') {
         setCount(data.count);
