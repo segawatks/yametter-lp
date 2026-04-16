@@ -1032,7 +1032,8 @@
 
 <script>
   const COOKIE = 'yametter_raised';
-  const API = 'https://api.counterapi.dev/v1/yametter-lp-2026/testers/';
+  const API_GET = 'https://api.countapi.xyz/get/yametter-lp-2026/testers';
+  const API_HIT = 'https://api.countapi.xyz/hit/yametter-lp-2026/testers';
 
   function hasCookie() {
     return document.cookie.split(';').some(c => c.trim().startsWith(COOKIE + '='));
@@ -1044,7 +1045,6 @@
   }
   function setCount(n) {
     document.getElementById('handCountNum').textContent = n;
-    localStorage.setItem('yametter_count', n);
   }
   async function raiseHand() {
     if (hasCookie()) return;
@@ -1056,14 +1056,17 @@
     document.getElementById('testflightMsg').style.display = 'block';
     setCookie();
     try {
-      const res = await fetch(API + 'up');
+      const res = await fetch(API_HIT);
       const data = await res.json();
-      setCount(data.count);
+      setCount(data.value);
     } catch(e) {}
   }
   async function fetchCount() {
-    const cached = localStorage.getItem('yametter_count');
-    if (cached !== null) setCount(Number(cached));
+    try {
+      const res = await fetch(API_GET);
+      const data = await res.json();
+      setCount(data.value);
+    } catch(e) {}
   }
 
   (async () => {
