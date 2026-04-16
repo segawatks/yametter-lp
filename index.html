@@ -1032,7 +1032,7 @@
 
 <script>
   const COOKIE = 'yametter_raised';
-  const API = 'https://api.counterapi.dev/v1/yametter-lp-2026/testers';
+  const API = 'https://api.counterapi.dev/v1/yametter-lp-2026/testers/';
 
   function hasCookie() {
     return document.cookie.split(';').some(c => c.trim().startsWith(COOKIE + '='));
@@ -1062,15 +1062,18 @@
   }
   async function fetchCount() {
     try {
-      const res = await fetch(API);
+      const res = await fetch(API + '/get');
       const data = await res.json();
-      if (typeof data.count === 'number') {
-        setCount(data.count);
+      console.log('counterapi response:', JSON.stringify(data));
+      const val = data.count ?? data.value ?? data.hits ?? null;
+      if (typeof val === 'number') {
+        setCount(val);
       } else {
-        setCount(0);
+        setCount('?');
       }
     } catch(e) {
-      setCount(0);
+      console.log('counterapi error:', e);
+      setCount('?');
     }
   }
 
