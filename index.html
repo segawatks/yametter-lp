@@ -1055,14 +1055,14 @@
     document.getElementById('testflightMsg').style.display = 'block';
     setCookie();
     try {
-      const res = await fetch(API + '/up');
+      const res = await fetch(API + 'up');
       const data = await res.json();
       setCount(data.count);
     } catch(e) {}
   }
   async function fetchCount() {
     try {
-      const res = await fetch(API + '/get');
+      const res = await fetch(API + 'get');
       const data = await res.json();
       console.log('counterapi response:', JSON.stringify(data));
       const val = data.count ?? data.value ?? data.hits ?? null;
