@@ -65,10 +65,10 @@
     }
 
     .header-cta {
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      padding: 8px 20px;
+      background: #fff;
+      color: var(--text);
+      border: 2.5px solid var(--text);
+      padding: 7px 20px;
       border-radius: 99px;
       font-size: 0.85rem;
       font-weight: 700;
@@ -76,7 +76,7 @@
       text-decoration: none;
       transition: opacity 0.2s;
     }
-    .header-cta:hover { opacity: 0.85; }
+    .header-cta:hover { opacity: 0.7; }
 
     /* ─── HERO ─── */
     .hero {
@@ -176,6 +176,20 @@
       transform: translateY(-2px);
       box-shadow: 0 12px 32px rgba(47,85,138,0.4);
     }
+    .btn-outline {
+      display: inline-block;
+      background: #fff;
+      color: var(--text);
+      border: 2.5px solid var(--text);
+      font-size: 1rem;
+      font-weight: 800;
+      padding: 14px 40px;
+      border-radius: 99px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+      letter-spacing: 0.02em;
+    }
+    .btn-outline:hover { opacity: 0.7; }
 
     .btn-secondary {
       display: inline-block;
@@ -940,13 +954,13 @@
       <div class="sched-card">
         <div class="sched-card-head">
           <div class="sched-date-block">
-            <span class="s-date">4/9</span>
+            <span class="s-date">4/16</span>
             <span class="s-week">木曜日</span>
           </div>
-          <p class="sched-card-title">ヤメッターBeta版ユーザー募集開始</p>
+          <p class="sched-card-title">ヤメッターBeta版ユーザー募集サイト公開</p>
         </div>
         <div class="sched-card-body">
-          <p class="sched-card-desc">事前に参加予定人数を確認したいので、Beta版のダウンロードを前向きに検討していただける場合は下のボタンをタップしていただくとありがたいです。</p>
+          <p class="sched-card-desc">事前に参加予定人数を確認したいので、Beta版のダウンロードを前向きに検討していただけるユーザー様は下のボタンをタップしていただくとありがたいです。</p>
           <div style="margin-top:20px; text-align:center;">
             <button id="raiseHandBtn" onclick="raiseHand()" style="
               background: var(--primary);
@@ -964,6 +978,9 @@
             <div class="hand-count-box" style="text-align:center;">
               現在 <span class="count-num" id="handCountNum">–</span> 人が参加表明中
             </div>
+            <p id="testflightMsg" style="display:none; margin-top:16px; font-size:0.85rem; color:var(--text); line-height:1.85; text-align:left;">
+              事前に<a href="https://apps.apple.com/jp/app/testflight/id899247664" target="_blank" rel="noopener" style="color:var(--primary); font-weight:700; text-decoration:underline; text-underline-offset:3px;">こちらのTestFlightのインストール</a>をお願いいたします。このアプリを通じてヤメッター(beta)がダウンロードできます。Apple公式のbeta版アプリ配布方法です。
+            </p>
           </div>
         </div>
       </div>
@@ -971,41 +988,41 @@
       <div class="sched-card">
         <div class="sched-card-head">
           <div class="sched-date-block">
-            <span class="s-date">4/14</span>
+            <span class="s-date">4/20</span>
             <span class="s-week">火曜日</span>
           </div>
           <p class="sched-card-title">ヤメッター Beta版ダウンロード開始</p>
         </div>
         <div class="sched-card-body">
-          <p class="sched-card-desc">こちらのサイトにダウンロードリンクを掲載します。スマやめにも通知を送信します。公開後数日はユーザーが少なくパートナーが見つからないはずですので「1人で集中モード」のみ使用可能です。</p>
+          <p class="sched-card-desc">こちらのサイトにダウンロードリンクを掲載します。スマやめにも通知を送信します。100人程度のユーザー数に達するまでは「1人で集中モード」のみ使用可能です。</p>
         </div>
       </div>
 
       <div class="sched-card">
         <div class="sched-card-head">
           <div class="sched-date-block">
-            <span class="s-date">4/17</span>
-            <span class="s-week">金曜日</span>
-            <span class="s-time">18:00</span>
+            <span class="s-date">4月未定</span>
+            <!-- <span class="s-week">金曜日</span> -->
+            <!-- <span class="s-time">18:00</span> -->
           </div>
           <p class="sched-card-title">パートナー検索機能 提供開始</p>
         </div>
         <div class="sched-card-body">
-          <p class="sched-card-desc">比較的ユーザー数が安定すると予想される金曜の18時から日曜の24時までパートナー検索の解放を予定しています。<strong>バグでの中断や混乱がほぼ確実に「ある」と思います。</strong></p>
+          <p class="sched-card-desc">パートナー検索が成立するであろうユーザー数に達した時点で提供を開始します。<strong>バグでの中断や混乱がほぼ確実に「ある」と思いますので覚悟してご参加ください。</strong></p>
         </div>
       </div>
 
       <div class="sched-card">
         <div class="sched-card-head">
           <div class="sched-date-block">
-            <span class="s-date">4/19</span>
-            <span class="s-week">日曜日</span>
-            <span class="s-time">24:00</span>
+            <span class="s-date">4月未定</span>
+            <!-- <span class="s-week">日曜日</span> -->
+            <!-- <span class="s-time">24:00</span> -->
           </div>
           <p class="sched-card-title">パートナー検索機能を一旦停止</p>
         </div>
         <div class="sched-card-body">
-          <p class="sched-card-desc">メンテナンス・バグ修正のため、パートナー検索機能を一時停止します。再開時期や詳細はこちらのサイトやアプリ内でお知らせします。</p>
+          <p class="sched-card-desc">メンテナンス・バグ修正のため、パートナー検索機能を一時停止します。最悪「パートナー検索」公開直後に停止もありえます。再開時期や詳細はこちらのサイトやアプリ内でお知らせします。このページはスマやめの設定パネルにリンクがありますので最新情報はこちらのサイトを参照してください。重要な情報はスマやめに通知を送信する場合もあります。</p>
         </div>
       </div>
 
@@ -1028,6 +1045,18 @@
   function setCount(n) {
     document.getElementById('handCountNum').textContent = n;
   }
+  const SLACK_WEBHOOK = 'https://hooks.slack.com/services/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';
+
+  async function notifySlack(count) {
+    try {
+      await fetch(SLACK_WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ text: '🎉 ヤメッター参加者が *' + count + '人* になりました！' })
+      });
+    } catch(e) {}
+  }
+
   async function raiseHand() {
     if (hasCookie()) return;
     const btn = document.getElementById('raiseHandBtn');
@@ -1035,14 +1064,18 @@
     btn.style.opacity = '0.6';
     btn.style.cursor = 'default';
     btn.textContent = '✅ ありがとうございます！';
+    document.getElementById('testflightMsg').style.display = 'block';
     setCookie();
     try {
       const res = await fetch(API + '/up');
       const data = await res.json();
       setCount(data.count);
+      if (data.count % 1 === 0) {
+        await notifySlack(data.count);
+      }
     } catch(e) {}
   }
-  (async () => {
+  async function fetchCount() {
     try {
       const res = await fetch(API + '/get');
       const data = await res.json();
@@ -1050,13 +1083,20 @@
     } catch(e) {
       document.getElementById('handCountNum').textContent = '–';
     }
+  }
+
+  (async () => {
+    await fetchCount();
     if (hasCookie()) {
       const btn = document.getElementById('raiseHandBtn');
       btn.disabled = true;
       btn.style.opacity = '0.6';
       btn.style.cursor = 'default';
       btn.textContent = '✅ 参加表明済み';
+      document.getElementById('testflightMsg').style.display = 'block';
     }
+    // 30秒ごとに自動更新
+    setInterval(fetchCount, 30000);
   })();
 </script>
 
