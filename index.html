@@ -1045,18 +1045,6 @@
   function setCount(n) {
     document.getElementById('handCountNum').textContent = n;
   }
-  const SLACK_WEBHOOK = 'https://hooks.slack.com/services/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';
-
-  async function notifySlack(count) {
-    try {
-      await fetch(SLACK_WEBHOOK, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: '🎉 ヤメッター参加者が *' + count + '人* になりました！' })
-      });
-    } catch(e) {}
-  }
-
   async function raiseHand() {
     if (hasCookie()) return;
     const btn = document.getElementById('raiseHandBtn');
@@ -1070,18 +1058,19 @@
       const res = await fetch(API + '/up');
       const data = await res.json();
       setCount(data.count);
-      if (data.count % 1 === 0) {
-        await notifySlack(data.count);
-      }
     } catch(e) {}
   }
   async function fetchCount() {
     try {
       const res = await fetch(API + '/get');
       const data = await res.json();
-      setCount(data.count);
+      if (typeof data.count === 'number') {
+        setCount(data.count);
+      } else {
+        setCount(0);
+      }
     } catch(e) {
-      document.getElementById('handCountNum').textContent = '–';
+      setCount(0);
     }
   }
 
