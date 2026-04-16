@@ -1044,6 +1044,7 @@
   }
   function setCount(n) {
     document.getElementById('handCountNum').textContent = n;
+    localStorage.setItem('yametter_count', n);
   }
   async function raiseHand() {
     if (hasCookie()) return;
@@ -1061,20 +1062,8 @@
     } catch(e) {}
   }
   async function fetchCount() {
-    try {
-      const res = await fetch('https://api.counterapi.dev/v2/yametter-lp-2026/testers');
-      const data = await res.json();
-      console.log('counterapi response:', JSON.stringify(data));
-      const val = data.count ?? data.value ?? data.hits ?? null;
-      if (typeof val === 'number') {
-        setCount(val);
-      } else {
-        setCount('?');
-      }
-    } catch(e) {
-      console.log('counterapi error:', e);
-      setCount('?');
-    }
+    const cached = localStorage.getItem('yametter_count');
+    if (cached !== null) setCount(Number(cached));
   }
 
   (async () => {
