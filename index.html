@@ -1064,9 +1064,12 @@
   async function fetchCount() {
     try {
       const res = await fetch(API_GET);
+      if (!res.ok) { setCount(0); return; }
       const data = await res.json();
-      setCount(data.value);
-    } catch(e) {}
+      setCount(data.value ?? 0);
+    } catch(e) {
+      setCount(0);
+    }
   }
 
   (async () => {
