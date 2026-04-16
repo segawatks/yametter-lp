@@ -1062,7 +1062,7 @@
   }
   async function fetchCount() {
     try {
-      const res = await fetch('https://api.counterapi.dev/v2/yametter-lp-2026/testers/');
+      const res = await fetch('https://api.counterapi.dev/v2/yametter-lp-2026/testers');
       const data = await res.json();
       console.log('counterapi response:', JSON.stringify(data));
       const val = data.count ?? data.value ?? data.hits ?? null;
