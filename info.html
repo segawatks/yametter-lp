@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ヤメッター 最新情報</title>
+  <style>
+    :root {
+      --primary: rgb(47,85,138);
+      --text: rgb(16,32,67);
+      --bg: rgb(253,255,249);
+      --accent: rgb(250,140,230);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
+      line-height: 1.7;
+      padding: 40px 24px 80px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 32px;
+      letter-spacing: 0.02em;
+    }
+
+    .lead {
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 40px;
+      font-weight: 500;
+    }
+
+    .roadmap {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 縦の連続ライン */
+    .roadmap::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: rgba(47,85,138,0.2);
+    }
+
+    .step {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      min-height: 72px;
+      position: relative;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--primary);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .dot.accent {
+      background: var(--accent);
+    }
+
+    .step-content {
+      flex: 1;
+    }
+
+    .step-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: rgba(47,85,138,0.08);
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 99px;
+      margin-bottom: 4px;
+      letter-spacing: 0.05em;
+    }
+
+    .step-label.now {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .step-text {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .step-sub {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: rgba(16,32,67,0.6);
+      margin-top: 2px;
+    }
+
+    .step.goal .step-text {
+      color: var(--primary);
+    }
+
+    .note {
+      margin-top: 40px;
+      padding: 20px;
+      background: rgba(47,85,138,0.05);
+      border-radius: 12px;
+      font-size: 0.82rem;
+      color: rgba(16,32,67,0.75);
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>ロードマップ</h1>
+  <p class="lead">1〜2ヶ月で以下のようなイメージで正式リリースを考えています。</p>
+
+  <div class="roadmap">
+
+    <div class="step">
+      <div class="dot accent"></div>
+      <div class="step-content">
+        <span class="step-label now">現在</span>
+        <p class="step-text">スマやめサブスクユーザー（全体の10%）にのみ告知</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="dot"></div>
+      <div class="step-content">
+        <p class="step-text">オープンテスト参加特典をちらつかせつつ流入人数アップ</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="dot"></div>
+      <div class="step-content">
+        <p class="step-text">検索、共有機能の追加</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="dot"></div>
+      <div class="step-content">
+        <p class="step-text">スマやめの育成魚種の多い無料ユーザーに告知開始</p>
+        <p class="step-sub">真面目な人が集まるSNS感の土壌を作りたい</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="dot"></div>
+      <div class="step-content">
+        <p class="step-text">魚種数のハードルを下げ流入人数アップ &amp; バグ修正</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="dot"></div>
+      <div class="step-content">
+        <p class="step-text">スマやめ全ユーザーに告知</p>
+        <p class="step-sub">流入少なければ特典追加、できる限り人数を増やす</p>
+      </div>
+    </div>
+
+    <div class="step goal">
+      <div class="dot"></div>
+      <div class="step-content">
+        <p class="step-text">正式リリース 🎉</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="note">
+    正直どうなるかわかりません。理想です。大コケする可能性も全然あります。ただ、ここまで1年以上かかってるので焦らずしっかりしたアプリをリリースしたいと考えています。
+  </div>
+
+</body>
+</html>
