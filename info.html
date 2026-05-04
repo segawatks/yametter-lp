@@ -18,9 +18,9 @@
       background: var(--bg);
       color: var(--text);
       font-family: -apple-system, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
-      line-height: 1.7;
+      line-height: 1.6;
       padding: 40px 24px 80px;
-      max-width: 640px;
+      max-width: 600px;
       margin: 0 auto;
     }
 
@@ -28,102 +28,158 @@
       font-size: 1.1rem;
       font-weight: 800;
       color: var(--primary);
-      margin-bottom: 32px;
+      margin-bottom: 12px;
       letter-spacing: 0.02em;
     }
 
     .lead {
-      font-size: 0.95rem;
+      font-size: 0.88rem;
       color: var(--text);
       margin-bottom: 40px;
       font-weight: 500;
+      opacity: 0.75;
     }
 
+    /* ─── ROADMAP ─── */
     .roadmap {
       position: relative;
-      display: flex;
-      flex-direction: column;
+      padding-left: 28px;
     }
 
-    /* 縦の連続ライン */
+    /* 縦ライン */
     .roadmap::before {
       content: '';
       position: absolute;
-      left: 5px;
-      top: 8px;
-      bottom: 8px;
+      left: 7px;
+      top: 12px;
+      bottom: 12px;
       width: 2px;
-      background: rgba(47,85,138,0.2);
+      background: rgba(47,85,138,0.15);
     }
 
     .step {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      min-height: 72px;
       position: relative;
+      margin-bottom: 20px;
     }
 
-    .dot {
-      width: 12px;
-      height: 12px;
+    /* ドット */
+    .step::before {
+      content: '';
+      position: absolute;
+      left: -22px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
       border-radius: 50%;
       background: var(--primary);
-      flex-shrink: 0;
-      position: relative;
       z-index: 1;
     }
 
-    .dot.accent {
+    .step.now::before {
       background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(250,140,230,0.2);
     }
 
-    .step-content {
-      flex: 1;
+    .step.last::before {
+      background: var(--primary);
+      box-shadow: 0 0 0 4px rgba(47,85,138,0.15);
+    }
+
+    /* 吹き出し本体 */
+    .bubble {
+      position: relative;
+      background: #fff;
+      border: 1.5px solid rgba(47,85,138,0.12);
+      border-radius: 12px;
+      padding: 12px 16px;
+      box-shadow: 0 2px 8px rgba(47,85,138,0.06);
+    }
+
+    .step.now .bubble {
+      border-color: rgba(250,140,230,0.4);
+      background: rgba(255,245,253,1);
+    }
+
+    .step.last .bubble {
+      border-color: rgba(47,85,138,0.25);
+      background: rgba(47,85,138,0.04);
+    }
+
+    /* 吹き出しの三角（左向き） */
+    .bubble::before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-style: solid;
+      border-width: 7px 8px 7px 0;
+      border-color: transparent rgba(47,85,138,0.12) transparent transparent;
+    }
+
+    .bubble::after {
+      content: '';
+      position: absolute;
+      left: -6px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-style: solid;
+      border-width: 6px 7px 6px 0;
+      border-color: transparent #fff transparent transparent;
+    }
+
+    .step.now .bubble::after {
+      border-color: transparent rgba(255,245,253,1) transparent transparent;
+    }
+
+    .step.now .bubble::before {
+      border-color: transparent rgba(250,140,230,0.4) transparent transparent;
+    }
+
+    .step.last .bubble::after {
+      border-color: transparent rgba(47,85,138,0.04) transparent transparent;
     }
 
     .step-label {
-      font-size: 0.68rem;
-      font-weight: 700;
-      color: var(--primary);
-      background: rgba(47,85,138,0.08);
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: #fff;
+      background: var(--accent);
       display: inline-block;
-      padding: 2px 8px;
+      padding: 1px 8px;
       border-radius: 99px;
       margin-bottom: 4px;
-      letter-spacing: 0.05em;
-    }
-
-    .step-label.now {
-      background: var(--accent);
-      color: #fff;
+      letter-spacing: 0.06em;
     }
 
     .step-text {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 600;
       color: var(--text);
+      line-height: 1.5;
+    }
+
+    .step.last .step-text {
+      color: var(--primary);
+      font-weight: 800;
     }
 
     .step-sub {
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       font-weight: 400;
-      color: rgba(16,32,67,0.6);
-      margin-top: 2px;
-    }
-
-    .step.goal .step-text {
-      color: var(--primary);
+      color: rgba(16,32,67,0.55);
+      margin-top: 3px;
     }
 
     .note {
-      margin-top: 40px;
-      padding: 20px;
+      margin-top: 36px;
+      padding: 18px 20px;
       background: rgba(47,85,138,0.05);
       border-radius: 12px;
-      font-size: 0.82rem;
-      color: rgba(16,32,67,0.75);
-      line-height: 1.8;
+      font-size: 0.8rem;
+      color: rgba(16,32,67,0.65);
+      line-height: 1.85;
     }
   </style>
 </head>
@@ -134,54 +190,47 @@
 
   <div class="roadmap">
 
-    <div class="step">
-      <div class="dot accent"></div>
-      <div class="step-content">
-        <span class="step-label now">現在</span>
+    <div class="step now">
+      <div class="bubble">
+        <span class="step-label">現在</span>
         <p class="step-text">スマやめサブスクユーザー（全体の10%）にのみ告知</p>
       </div>
     </div>
 
     <div class="step">
-      <div class="dot"></div>
-      <div class="step-content">
+      <div class="bubble">
         <p class="step-text">オープンテスト参加特典をちらつかせつつ流入人数アップ</p>
       </div>
     </div>
 
     <div class="step">
-      <div class="dot"></div>
-      <div class="step-content">
+      <div class="bubble">
         <p class="step-text">検索、共有機能の追加</p>
       </div>
     </div>
 
     <div class="step">
-      <div class="dot"></div>
-      <div class="step-content">
+      <div class="bubble">
         <p class="step-text">スマやめの育成魚種の多い無料ユーザーに告知開始</p>
         <p class="step-sub">真面目な人が集まるSNS感の土壌を作りたい</p>
       </div>
     </div>
 
     <div class="step">
-      <div class="dot"></div>
-      <div class="step-content">
+      <div class="bubble">
         <p class="step-text">魚種数のハードルを下げ流入人数アップ &amp; バグ修正</p>
       </div>
     </div>
 
     <div class="step">
-      <div class="dot"></div>
-      <div class="step-content">
+      <div class="bubble">
         <p class="step-text">スマやめ全ユーザーに告知</p>
         <p class="step-sub">流入少なければ特典追加、できる限り人数を増やす</p>
       </div>
     </div>
 
-    <div class="step goal">
-      <div class="dot"></div>
-      <div class="step-content">
+    <div class="step last">
+      <div class="bubble">
         <p class="step-text">正式リリース 🎉</p>
       </div>
     </div>
