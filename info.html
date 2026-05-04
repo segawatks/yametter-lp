@@ -66,7 +66,7 @@
     .step::before {
       content: '';
       position: absolute;
-      left: -22px;
+      left: -27px;
       top: 50%;
       transform: translateY(-50%);
       width: 14px;
@@ -81,14 +81,11 @@
       box-shadow: 0 0 0 4px rgba(250,140,230,0.2);
     }
 
-    .step.last::before {
-      background: var(--primary);
-      box-shadow: 0 0 0 4px rgba(47,85,138,0.15);
-    }
 
     /* 吹き出し本体 */
     .bubble {
       position: relative;
+      z-index: 1;
       background: #fff;
       border: 1.5px solid rgba(47,85,138,0.12);
       border-radius: 12px;
@@ -101,10 +98,6 @@
       background: rgba(255,245,253,1);
     }
 
-    .step.last .bubble {
-      border-color: rgba(47,85,138,0.25);
-      background: rgba(47,85,138,0.04);
-    }
 
     /* 吹き出しの三角（左向き） */
     .bubble::before {
@@ -137,9 +130,6 @@
       border-color: transparent rgba(250,140,230,0.4) transparent transparent;
     }
 
-    .step.last .bubble::after {
-      border-color: transparent rgba(47,85,138,0.04) transparent transparent;
-    }
 
     .step-label {
       font-size: 0.65rem;
@@ -151,6 +141,8 @@
       border-radius: 99px;
       margin-bottom: 4px;
       letter-spacing: 0.06em;
+      font-size: 0.75rem;
+      transform: translateY(-3px);
     }
 
     .step-text {
@@ -193,32 +185,35 @@
     <div class="step now">
       <div class="bubble">
         <span class="step-label">現在</span>
-        <p class="step-text">スマやめサブスクユーザー（全体の10%）にのみ告知</p>
+        <p class="step-text">スマやめサブスクユーザー(全体の5%)にのみ告知</p>
       </div>
     </div>
 
     <div class="step">
       <div class="bubble">
-        <p class="step-text">オープンテスト参加特典をちらつかせつつ流入人数アップ</p>
+        <p class="step-text">オープンテスト参加特典の告知による流入人数アップ</p>
+        <p class="step-sub">特典は有料機能の1~2年間無料化等で考えています。</p>
       </div>
     </div>
 
     <div class="step">
       <div class="bubble">
-        <p class="step-text">検索、共有機能の追加</p>
+        <p class="step-text">検索、共有、下書き機能の追加</p>
+        <p class="step-sub">SNSとして中心となる機能の充実。</p>
       </div>
     </div>
 
     <div class="step">
       <div class="bubble">
         <p class="step-text">スマやめの育成魚種の多い無料ユーザーに告知開始</p>
-        <p class="step-sub">真面目な人が集まるSNS感の土壌を作りたい</p>
+        <p class="step-sub">質の高いユーザーを最初に集めて全員ガチという雰囲気を作りたい</p>
       </div>
     </div>
 
     <div class="step">
       <div class="bubble">
-        <p class="step-text">魚種数のハードルを下げ流入人数アップ &amp; バグ修正</p>
+        <p class="step-text">魚種数のハードルを下げ流入人数アップ &amp; 人数増加によるバグ修正</p>
+        <p class="step-sub">ここが山場になると考えてます。予測不能。</p>
       </div>
     </div>
 
@@ -238,7 +233,7 @@
   </div>
 
   <div class="note">
-    正直どうなるかわかりません。理想です。大コケする可能性も全然あります。ただ、ここまで1年以上かかってるので焦らずしっかりしたアプリをリリースしたいと考えています。
+    正直どうなるかわかりません。理想です。3・4ヶ月先になるかもしれませんし大コケする可能性も全然あります。ただここまで1年以上かかってるので焦らずしっかりしたアプリをリリースしたいと考えています。
   </div>
 
 </body>
