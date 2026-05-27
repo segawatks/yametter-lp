@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>segawa について</title>
+  <meta name="description" content="スマホをやめれば魚が育つ・ヤメッター開発者 segawa の自己紹介">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #fafaf8;
+      color: #1a1a1a;
+      font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'BIZ UDPGothic', 'Noto Sans JP', sans-serif;
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 72px 28px 120px;
+    }
+
+    /* ─── INTRO ─── */
+    .intro {
+      margin-bottom: 64px;
+    }
+
+    .intro-name {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 16px;
+    }
+
+    .intro-title {
+      font-size: clamp(1.6rem, 5vw, 2.2rem);
+      font-weight: 900;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      color: #1a1a1a;
+      margin-bottom: 24px;
+    }
+
+    .intro-lead {
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.9;
+    }
+
+    /* ─── DIVIDER ─── */
+    hr {
+      border: none;
+      border-top: 1px solid #e8e8e4;
+      margin: 52px 0;
+    }
+
+    /* ─── SECTION ─── */
+    .section {
+      margin-bottom: 52px;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 12px;
+    }
+
+    .section-heading {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+      line-height: 1.4;
+    }
+
+    .section-body {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.95;
+    }
+
+    .section-body + .section-body {
+      margin-top: 14px;
+    }
+
+    /* ─── LIKE BUTTON ─── */
+    .like-area {
+      margin-top: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    #likeBtn {
+      background: none;
+      border: 2px solid #d0d0cc;
+      border-radius: 99px;
+      padding: 12px 32px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #666;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+      font-family: inherit;
+    }
+
+    #likeBtn:hover {
+      border-color: #e87;
+      color: #e87;
+    }
+
+    #likeBtn.liked {
+      background: #fff0ee;
+      border-color: #e87;
+      color: #e87;
+    }
+
+    #likeBtn.liked .face {
+      animation: pop 0.3s ease;
+    }
+
+    @keyframes pop {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.5) rotate(-8deg); }
+      100% { transform: scale(1); }
+    }
+
+    .like-count {
+      font-size: 0.82rem;
+      color: #999;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      min-height: 1.2em;
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      margin-top: 80px;
+      padding-top: 28px;
+      border-top: 1px solid #e8e8e4;
+      font-size: 0.75rem;
+      color: #bbb;
+      text-align: center;
+    }
+
+    .footer a {
+      color: #999;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- INTRO -->
+  <div class="intro">
+    <p class="intro-name">segawa — designer / programmer</p>
+    <h1 class="intro-title">はじめまして、<br>segawa（まあ瀬川ですけど）です。</h1>
+    <p class="intro-lead">
+      「スマホをやめれば魚が育つ」と「ヤメッター」というアプリを作りました。
+      これは、なぜそんなものを作れたのか、という話です。
+    </p>
+  </div>
+
+  <hr>
+
+  <!-- 略歴 -->
+  <div class="section">
+    <p class="section-label">Background</p>
+    <h2 class="section-heading">デザインとプログラミングについて</h2>
+    <p class="section-body">
+      25年ほど前に京都市立芸術大学のデザイン学科を卒業しました。1浪したのでデッサンやらなんやらそれなりの数はこなしました。卒業作品はちゃんと掲載されています。
+    </p>
+    <p class="section-body">
+      デザインに関する考え方に影響があったのは、大学の教員をしていたときに杉浦康平先生や戸田ツトム先生の授業を学生と一緒に受けたことだと思います。あとクソみたいなデザイン会社ではスピード感が身についた。
+    </p>
+    <p class="section-body">
+      プログラミングに関しては我流なので、めちゃくちゃだと思います。
+    </p>
+  </div>
+
+  <!-- 作品 -->
+  <div class="section">
+    <p class="section-label">Works</p>
+    <h2 class="section-heading">アプリについて</h2>
+    <p class="section-body">
+      これまでリリースしたアプリはいくつかあって、そこそこ売れたのは3本くらい。いちばんはもちろんスマやめで、新旧合わせて200万DLくらい（10年以上かけてなのでそんなに凄くはない）。
+    </p>
+    <p class="section-body">
+      ヤメッターについては、もともとスマやめが頭打ちになって、広告もこれ以上増やしたらさすがにやばいな、とSNS機能でも載せるかーと半年ほど作っていたんです。でもとても1人では無理だなと諦めました。アプリはサーバーが絡むととんでもなく難易度が上がります。
+    </p>
+    <p class="section-body">
+      で、もう忘れていたんですがChatGPTが出てきて、触ってみたら「あーこれは1人でもSNSつくれるな」と。それで作り始めたわけです。
+    </p>
+  </div>
+
+  <hr>
+
+  <!-- コンセプト1 -->
+  <div class="section">
+    <p class="section-label">Concept 01</p>
+    <h2 class="section-heading">人とのつながりをご褒美にする</h2>
+    <p class="section-body">
+      スマやめの離脱率がなぜ高いかというと、「がんばり」＞「魚育成の楽しさ」だからです。ご褒美ががんばりに対して見合っていない。つまんない。
+    </p>
+    <p class="section-body">
+      この「がんばり」に対等なご褒美って、もう人間の根源的な欲求しかないわけです。「お金」か「人とのつながり」。じゃあ「人とのつながり」をご褒美にすれば、絶対に「がんばり」が続くツールになるでしょ、というのでできたのがヤメッターです。
+    </p>
+  </div>
+
+  <!-- コンセプト2 -->
+  <div class="section">
+    <p class="section-label">Concept 02</p>
+    <h2 class="section-heading">グラフがコンテンツになる</h2>
+    <p class="section-body">
+      SNSのコンテンツってそこに集まる人そのものです。Xだとポストそのもの。ヤメッターではそれがグラフになっています。iPhoneのスクリーンタイムでアプリをブロックしていた実際の時間が記録されるので、「ガチ感」が伝わるグラフになります。
+    </p>
+    <p class="section-body">
+      人のがんばりを見る、自分のがんばりを人に見られる。それとヤメッターはApple Sign Inのみなので、簡単にアカウントの複製はできません。大事に育ててください。
+    </p>
+  </div>
+
+  <!-- コンセプト3 -->
+  <div class="section">
+    <p class="section-label">Concept 03</p>
+    <h2 class="section-heading">タグの徹底</h2>
+    <p class="section-body">
+      アプリを開くとまずタグ選択画面です。ポストにもグラフにもこのタグが表示されます。とにかく何に取り組んでいる人なのかがすぐ目に入るようになっています。
+    </p>
+    <p class="section-body">
+      いちいちポストで「勉強頑張ってます！」とか言わなくていい。わざとらしくがんばりをアピールする必要がない。アプリの"仕様"でタグは必ず表示されるから、「つかれた」だけのポストでもすごく説得力があるし共感が持てる。気になるタグだったらプロフを見に行きます。人は人に興味を持ちたいし、持たれたい。
+    </p>
+  </div>
+
+  <!-- HEE -->
+  <div class="like-area">
+    <button id="likeBtn" onclick="handleLike()">
+      <span class="face" style="font-size:1.2rem; line-height:1;">( ˙꒳˙ )</span>
+      <span id="likeBtnText">へぇー</span>
+    </button>
+    <p class="like-count" id="likeCount"></p>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p>© 2026 segawa &nbsp;·&nbsp; <a href="https://segawatks.github.io/yametter-lp/" target="_blank" rel="noopener">ヤメッター</a></p>
+  </div>
+
+</div>
+
+<script>
+  const COOKIE = 'segawa_profile_liked';
+  const API_GET = 'https://abacus.jasoncameron.dev/get/segawa-profile-2026/likes';
+  const API_HIT = 'https://abacus.jasoncameron.dev/hit/segawa-profile-2026/likes';
+
+  function hasLiked() {
+    return document.cookie.split(';').some(c => c.trim().startsWith(COOKIE + '='));
+  }
+  function setLikedCookie() {
+    const d = new Date();
+    d.setFullYear(d.getFullYear() + 1);
+    document.cookie = COOKIE + '=1; expires=' + d.toUTCString() + '; path=/; SameSite=Lax';
+  }
+  function setCount(n) {
+    const el = document.getElementById('likeCount');
+    el.textContent = n > 0 ? 'へぇー × ' + n : '';
+  }
+  async function handleLike() {
+    if (hasLiked()) return;
+    const btn = document.getElementById('likeBtn');
+    btn.classList.add('liked');
+    btn.querySelector('.face').textContent = '( °o° )';
+    document.getElementById('likeBtnText').textContent = 'へぇー！';
+    setLikedCookie();
+    try {
+      const res = await fetch(API_HIT);
+      const data = await res.json();
+      setCount(data.value);
+    } catch(e) {}
+  }
+  async function fetchCount() {
+    try {
+      const res = await fetch(API_GET);
+      if (!res.ok) return;
+      const data = await res.json();
+      setCount(data.value ?? 0);
+    } catch(e) {}
+  }
+  (async () => {
+    await fetchCount();
+    if (hasLiked()) {
+      const btn = document.getElementById('likeBtn');
+      btn.classList.add('liked');
+      btn.querySelector('.face').textContent = '( °o° )';
+      document.getElementById('likeBtnText').textContent = 'へぇー！';
+    }
+  })();
+</script>
+
+</body>
+</html>
