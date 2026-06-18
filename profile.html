@@ -37,10 +37,10 @@
     }
 
     .intro-title {
-      font-size: clamp(1.6rem, 5vw, 2.2rem);
-      font-weight: 900;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.85;
+      letter-spacing: 0;
       color: #1a1a1a;
       margin-bottom: 24px;
     }
@@ -49,6 +49,12 @@
       font-size: 1rem;
       color: #444;
       line-height: 1.9;
+    }
+
+    .intro-sub {
+      font-size: 0.85rem;
+      color: #888;
+      margin-top: 8px;
     }
 
     /* ─── DIVIDER ─── */
@@ -89,6 +95,84 @@
 
     .section-body + .section-body {
       margin-top: 14px;
+    }
+
+    /* ─── BULLET LIST ─── */
+    .bullet-list {
+      list-style: none;
+      margin: 14px 0;
+    }
+
+    .bullet-list li {
+      font-size: 0.9rem;
+      color: #444;
+      line-height: 1.8;
+      padding-left: 1.2em;
+      position: relative;
+    }
+
+    .bullet-list li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: #aaa;
+      font-weight: 700;
+    }
+
+    /* ─── NOTE ─── */
+    .note {
+      font-size: 0.78rem;
+      color: #aaa;
+      margin-top: 10px;
+      line-height: 1.7;
+    }
+
+    .note a {
+      color: #bbb;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* ─── CATEGORY BLOCK ─── */
+    .category-block {
+      margin-bottom: 52px;
+    }
+
+    .category-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #1a1a1a;
+      letter-spacing: -0.01em;
+      line-height: 1.4;
+      margin-bottom: 28px;
+    }
+
+    .sub-section {
+      margin-bottom: 36px;
+      padding-left: 20px;
+      border-left: 2px solid #e8e8e4;
+    }
+
+    .sub-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .sub-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #bbb;
+      margin-bottom: 10px;
+    }
+
+    /* ─── 続く ─── */
+    .tsuzuku {
+      font-size: 0.88rem;
+      color: #bbb;
+      font-style: italic;
+      text-align: center;
+      margin-top: 60px;
     }
 
     /* ─── LIKE BUTTON ─── */
@@ -168,11 +252,8 @@
   <!-- INTRO -->
   <div class="intro">
     <p class="intro-name">segawa — designer / programmer</p>
-    <h1 class="intro-title">はじめまして、<br>segawa（まあ瀬川ですけど）です。</h1>
-    <p class="intro-lead">
-      「スマホをやめれば魚が育つ」と「ヤメッター」というアプリを作りました。
-      これは、なぜそんなものを作れたのか、という話です。
-    </p>
+    <h1 class="intro-title">segawa</h1>
+    <p class="intro-lead">代表作「スマホをやめれば魚が育つ」200万ダウンロード（10年かけてなのでそんなすごくない）</p>
   </div>
 
   <hr>
@@ -180,70 +261,114 @@
   <!-- 略歴 -->
   <div class="section">
     <p class="section-label">Background</p>
-    <h2 class="section-heading">デザインとプログラミングについて</h2>
+    <h2 class="section-heading">略歴</h2>
     <p class="section-body">
-      25年ほど前に京都市立芸術大学のデザイン学科を卒業しました。1浪したのでデッサンやらなんやらそれなりの数はこなしました。卒業作品はちゃんと掲載されています。
-    </p>
-    <p class="section-body">
-      デザインに関する考え方に影響があったのは、大学の教員をしていたときに杉浦康平先生や戸田ツトム先生の授業を学生と一緒に受けたことだと思います。あとクソみたいなデザイン会社ではスピード感が身についた。
-    </p>
-    <p class="section-body">
-      プログラミングに関しては我流なので、めちゃくちゃだと思います。
+      25年ほど前に京芸のデザイン学科を卒業しました。1浪したのでデッサンやらなんやらそれなりの数はこなしました。<a href="https://libmuse.kcua.ac.jp/muse/cgi-bin/database/moopac.cgi?IDv001=Unmeaning&IDn001=AND&keys10=&keys12=&keys3=&keys6=&keys45=&keys46=&keys49=&keys43=&word=0&not47=&print=20" target="_blank" rel="noopener" style="color:#888; text-underline-offset:2px;">卒業作品ちゃんと掲載されてる。</a>大学の時は絵しか描いてなかったので、実際にデザインについて学んだと言えるのは大学の助教してたときに杉浦康平先生や戸田ツトム先生の授業を受けたことかなと思います。デザインにおいて綺麗・可愛いは2流、1流は何も感じさせない。みたいなことでしょうか。まあ私は3流ですけど。プログラミングに関しては我流なのでめちゃくちゃだと思います。
     </p>
   </div>
 
   <!-- 作品 -->
   <div class="section">
     <p class="section-label">Works</p>
-    <h2 class="section-heading">アプリについて</h2>
+    <h2 class="section-heading">作品について</h2>
     <p class="section-body">
-      これまでリリースしたアプリはいくつかあって、そこそこ売れたのは3本くらい。いちばんはもちろんスマやめで、新旧合わせて200万DLくらい（10年以上かけてなのでそんなに凄くはない）。
+      これまでリリースしたアプリはヤメッター含めて12個でそこそこ売れたのは3本くらい、いちばんはもちろんスマやめで新旧合わせて200万DLくらい（10年かけてなのでそんなすごくはない）。
     </p>
     <p class="section-body">
-      ヤメッターについては、もともとスマやめが頭打ちになって、広告もこれ以上増やしたらさすがにやばいな、とSNS機能でも載せるかーと半年ほど作っていたんです。でもとても1人では無理だなと諦めました。アプリはサーバーが絡むととんでもなく難易度が上がります。
-    </p>
-    <p class="section-body">
-      で、もう忘れていたんですがChatGPTが出てきて、触ってみたら「あーこれは1人でもSNSつくれるな」と。それで作り始めたわけです。
+      で今回のヤメッターですがそもそもスマやめが頭打ちになって、広告もこれ以上増やしたらさすがにやばいなと、SNS機能でも載せるかーと半年ほどつくってたんです、でもとても1人では無理だなと諦めました。（スマやめのプログラム、デザイン、イラスト、アニメ、プロモ、マーケをAIなしで1人でやってた人が無理と言っている）アプリでサーバーが絡むととんでもなく難易度が上がるんですよ。で3年くらい寝てたら、ChatGPTがでてきて、触ってみたら、あーこれは1人でも(重要)SNSつくれるやんと、それで作り始めたわけです。（センシティブポストも人力無く弾けるやんという判断も大きかった）
     </p>
   </div>
 
   <hr>
 
-  <!-- コンセプト1 -->
+  <!-- コンセプト -->
   <div class="section">
     <p class="section-label">Concept 01</p>
     <h2 class="section-heading">人とのつながりをご褒美にする</h2>
     <p class="section-body">
-      スマやめの離脱率がなぜ高いかというと、「がんばり」＞「魚育成の楽しさ」だからです。ご褒美ががんばりに対して見合っていない。つまんない。
-    </p>
-    <p class="section-body">
-      この「がんばり」に対等なご褒美って、もう人間の根源的な欲求しかないわけです。「お金」か「人とのつながり」。じゃあ「人とのつながり」をご褒美にすれば、絶対に「がんばり」が続くツールになるでしょ、というのでできたのがヤメッターです。
-    </p>
-  </div>
-
-  <!-- コンセプト2 -->
-  <div class="section">
-    <p class="section-label">Concept 02</p>
-    <h2 class="section-heading">グラフがコンテンツになる</h2>
-    <p class="section-body">
-      SNSのコンテンツってそこに集まる人そのものです。Xだとポストそのもの。ヤメッターではそれがグラフになっています。iPhoneのスクリーンタイムでアプリをブロックしていた実際の時間が記録されるので、「ガチ感」が伝わるグラフになります。
-    </p>
-    <p class="section-body">
-      人のがんばりを見る、自分のがんばりを人に見られる。それとヤメッターはApple Sign Inのみなので、簡単にアカウントの複製はできません。大事に育ててください。
+      スマやめの離脱率がなぜ高いかというと、「がんばり」＞「魚育成の楽しさ」、だからです。ご褒美ががんばりに対して見合っていない。つまんない。ただ、この「がんばり」に対等なごほうびってもう人間の根源的な欲求しかないわけです。「お金」か「人とのつながり」です。じゃあ「人とのつながり」をごほうびにすれば絶対に「がんばり」が続くツールになるでしょっていうのでできたのがヤメッターです。
     </p>
   </div>
 
   <!-- コンセプト3 -->
   <div class="section">
-    <p class="section-label">Concept 03</p>
+    <p class="section-label">Concept 02</p>
     <h2 class="section-heading">タグの徹底</h2>
     <p class="section-body">
-      アプリを開くとまずタグ選択画面です。ポストにもグラフにもこのタグが表示されます。とにかく何に取り組んでいる人なのかがすぐ目に入るようになっています。
-    </p>
-    <p class="section-body">
-      いちいちポストで「勉強頑張ってます！」とか言わなくていい。わざとらしくがんばりをアピールする必要がない。アプリの"仕様"でタグは必ず表示されるから、「つかれた」だけのポストでもすごく説得力があるし共感が持てる。気になるタグだったらプロフを見に行きます。人は人に興味を持ちたいし、持たれたい。
+      アプリを開くとまずタグ選択画面です。ポストにもグラフにもこのタグが表示されます。とにかく何に取り組んでる人なのかというのがすぐ目に入るようになっています。特に日本人って自分の努力を、辛いとこをさらけ出すのが苦手です。タグというシステムがあると、いちいちポストで勉強頑張ってます！とか言わなくていい、わざとらしくがんばりをアピールする必要が無い。アプリの"仕様"でタグは必ず表示されるから「つかれた」だけのポストでもなんだか説得力を持つ。そして気になるタグだったらプロフを見に行きます、たぶん。人は人に興味を持ちたいし持たれたい。みんなもっとタグで遊んで。
     </p>
   </div>
+
+  <hr>
+
+  <!-- デザイン -->
+  <div class="category-block">
+    <p class="section-label">Design</p>
+    <h2 class="category-title">デザイン</h2>
+
+    <div class="sub-section">
+      <p class="sub-label">チュートリアル</p>
+      <p class="section-body">
+        基本的にスマやめで作った流れをそのまま踏襲しています。とにかく途中脱落させたくない。
+      </p>
+      <ul class="bullet-list">
+        <li>想定ユーザーは（漢字が読める）5歳児</li>
+        <li>ユーザーに判断させるのは1画面につき1つ（迷わせない）</li>
+        <li>選択肢ではこちらで選択を指示（考えさせない）</li>
+        <li>テキストは短ければ短いほど良い（3行は長い）</li>
+        <li>アプリの見せ場まで一直線（気をそらさせない）</li>
+      </ul>
+      <p class="section-body" style="margin-top:14px;">
+        流れがうまくいかなくてアプリの機能から見直したのでチュートリアル完成に3ヶ月かかりました。チュートリアルはDLしてくれたユーザー全員が体験するので時間と労力をかける価値があります。翌日もアプリを起動してくれるユーザーは3人に1人もいないので。（※全アプリ平均の翌日リテンション率は約25〜26%。スマやめは48%スマやめは48%大事なことなの(略)）
+      </p>
+      <p class="note">※引用元 <a href="https://www.adjust.com/resources/ebooks/mobile-app-trends-2026/" target="_blank" rel="noopener">Adjust「Mobile App Trends 2026」</a></p>
+    </div>
+
+    <div class="sub-section">
+      <p class="sub-label">UI</p>
+      <p class="section-body">
+        アプリのUIの型ってもう決まってるので、一番使われてるアプリやAppleがデザインしたものをそのまま踏襲すべきです。オリジナルのUIにしても「わかんない」ですぐ消されます。名もなき開発者であれば10人中7人ではなく10人中10人がわかるデザインに留めておくべき。ただ、覇権をとったアプリはアプリ側がユーザーより優位に立っているのでメニューやボタンがやたら増えてます。同じ数のボタンが許容されるわけではない。
+      </p>
+      <p class="section-body">
+        とはいえ、目新しい、オリジナルに近い機能は1からデザイン考えないといけませんね。ヤメッターでは「タグ」と「となりに座る」です。
+      </p>
+    </div>
+
+    <div class="sub-section">
+      <p class="sub-label">タグ</p>
+      <p class="section-body">
+        とにかく簡単に編集追加並べ替えができるようにしてます。1画面完結。誰もタグの管理なんてやりたくない。自分で「デザイン」できてるなと思う箇所は、
+      </p>
+      <p class="section-body">
+        1.並べ替えを「先頭に移動」「最後に移動」だけにして長押しで完結できるようにしたこと。<br>
+        2.タグが増えるとスクロールできるようになるんですが、そのときスクロール下部がふわっとグラデになるんです。これでスクロールできますよを伝えてる。
+      </p>
+      <p class="section-body">この2点が素晴らしい。</p>
+    </div>
+
+    <div class="sub-section">
+      <p class="sub-label">となりに座る</p>
+      <p class="section-body">
+        この機能オープンテスト中に考えて追加しました。テストまで一切頭になかった。パートナー検索がすぐに機能すると思ってたので。テストユーザーは120人/日くらいはすぐに集まったので環境としては完璧だと思いました。ほとんど学生なので使用時間を14時~24時=10時間とすれば120/10＝12人で1時間に12人はアプリを開いている。2人いればマッチは成立するのでそこそこいけそうでしょ。けどマッチは全然成立しない。200/ 日くらいまで増えてもだめ。いろいろ施策（マッチ可能を30分に1回にして人を集中させるとか）しましたが同期的マッチはこの人数では成立しないという結論になりました。
+      </p>
+      <p class="section-body">
+        で非同期的マッチを追加するしかなかったわけです。同系列のアプリを全部触ってみましたがいわゆるルーム方式が一般的です。Aというルームをオーナーユーザーが作ってそこに認証されたユーザーが集まるやつです。ところがこれは全然緊張感がない。「視線」が無い。やっぱり1対1じゃないと緊張感は生まれないんです。人間は弱い。
+      </p>
+      <p class="section-body">
+        でまあ今の形になったわけですけど「となりに座る」という表現を採用したのが一番のデザインだと思います。
+      </p>
+    </div>
+
+    <div class="sub-section">
+      <p class="sub-label">アイコン</p>
+      <p class="section-body">
+        当たり前の話なんですがみんなAI使ってるので手描きのほうが目立ちます。アイコンなんて目に止まるかひっかかるかだけなので、今はラッキーゲーム。で、画像生成にかかる時間（数十秒）で手描きならこれが限界。
+      </p>
+    </div>
+
+  </div>
+
+  <p class="tsuzuku">つづく（3万ダウンロードされれば）</p>
 
   <!-- HEE -->
   <div class="like-area">
@@ -256,6 +381,7 @@
 
   <!-- FOOTER -->
   <div class="footer">
+    <p style="margin-bottom:8px;">お問い合わせ：<a href="https://x.com/sumayame_segawa" target="_blank" rel="noopener">@sumayame_segawa</a></p>
     <p>© 2026 segawa &nbsp;·&nbsp; <a href="https://segawatks.github.io/yametter-lp/" target="_blank" rel="noopener">ヤメッター</a></p>
   </div>
 
