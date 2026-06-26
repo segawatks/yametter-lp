@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ヤメッター 使い方</title>
+  <title>ヤメッターの使い方</title>
   <style>
     :root {
       --primary: rgb(47,85,138);
@@ -18,185 +18,210 @@
       background: var(--bg);
       color: var(--text);
       font-family: -apple-system, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif;
-      line-height: 1.6;
-      padding: 40px 24px 80px;
+      line-height: 1.85;
+      padding: 48px 24px 100px;
       max-width: 600px;
       margin: 0 auto;
     }
 
-    h1 {
-      font-size: 1.1rem;
-      font-weight: 800;
+    /* ─── MAIN TITLE ─── */
+    .page-title {
+      font-size: 1.4rem;
+      font-weight: 900;
       color: var(--primary);
+      letter-spacing: -0.01em;
       margin-bottom: 12px;
-      letter-spacing: 0.02em;
     }
 
-    .lead {
-      font-size: 0.88rem;
-      color: var(--text);
-      margin-bottom: 40px;
-      font-weight: 500;
-      opacity: 0.75;
-    }
-
-    /* ─── ROADMAP ─── */
-    .roadmap {
-      position: relative;
-      padding-left: 28px;
-    }
-
-    /* 縦ライン */
-    .roadmap::before {
-      content: '';
-      position: absolute;
-      left: 7px;
-      top: 12px;
-      bottom: 12px;
-      width: 2px;
-      background: rgba(47,85,138,0.15);
-    }
-
-    .step {
-      position: relative;
-      margin-bottom: 20px;
-    }
-
-    /* ドット */
-    .step::before {
-      content: '';
-      position: absolute;
-      left: -27px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: var(--primary);
-      z-index: 1;
-    }
-
-    .step.now::before {
-      background: var(--accent);
-      box-shadow: 0 0 0 4px rgba(250,140,230,0.2);
-    }
-
-
-    /* 吹き出し本体 */
-    .bubble {
-      position: relative;
-      z-index: 1;
-      background: #fff;
-      border: 1.5px solid rgba(47,85,138,0.12);
-      border-radius: 12px;
-      padding: 12px 16px;
-      box-shadow: 0 2px 8px rgba(47,85,138,0.06);
-    }
-
-    .step.now .bubble {
-      border-color: rgba(250,140,230,0.4);
-      background: rgba(255,245,253,1);
-    }
-
-
-    /* 吹き出しの三角（左向き） */
-    .bubble::before {
-      content: '';
-      position: absolute;
-      left: -8px;
-      top: 50%;
-      transform: translateY(-50%);
-      border-style: solid;
-      border-width: 7px 8px 7px 0;
-      border-color: transparent rgba(47,85,138,0.12) transparent transparent;
-    }
-
-    .bubble::after {
-      content: '';
-      position: absolute;
-      left: -6px;
-      top: 50%;
-      transform: translateY(-50%);
-      border-style: solid;
-      border-width: 6px 7px 6px 0;
-      border-color: transparent #fff transparent transparent;
-    }
-
-    .step.now .bubble::after {
-      border-color: transparent rgba(255,245,253,1) transparent transparent;
-    }
-
-    .step.now .bubble::before {
-      border-color: transparent rgba(250,140,230,0.4) transparent transparent;
-    }
-
-
-    .step-label {
-      font-size: 0.65rem;
-      font-weight: 800;
-      color: #fff;
-      background: var(--accent);
-      display: inline-block;
-      padding: 1px 8px;
-      border-radius: 99px;
-      margin-bottom: 4px;
-      letter-spacing: 0.06em;
-      font-size: 0.75rem;
-      transform: translateY(-3px);
-    }
-
-    .step-text {
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--text);
-      line-height: 1.5;
-    }
-
-    .step.last .step-text {
-      color: var(--primary);
-      font-weight: 800;
-    }
-
-    .step-sub {
-      font-size: 0.75rem;
-      font-weight: 400;
-      color: rgba(16,32,67,0.55);
-      margin-top: 3px;
-    }
-
-    .note {
-      margin-top: 36px;
-      padding-top: 36px;
-      font-size: 1rem;
-      color: #102043;
+    .page-lead {
+      font-size: 0.92rem;
+      color: rgba(16,32,67,0.65);
       line-height: 1.85;
     }
 
-    .note::before {
-      content: '';
-      display: block;
+    /* ─── DIVIDER ─── */
+    .divider {
       width: 90%;
       height: 1px;
-      background: rgba(16,32,67,0.15);
-      margin: 0 auto 36px;
+      background: rgba(16,32,67,0.12);
+      margin: 40px auto;
     }
 
-    .note:first-child {
-      margin-top: 0;
-      padding-top: 0;
+    /* ─── SECTION ─── */
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 14px;
+      line-height: 1.4;
     }
 
-    .note:first-child::before {
-      display: none;
+    .section-lead {
+      font-size: 0.92rem;
+      color: rgba(16,32,67,0.75);
+      line-height: 1.9;
+      margin-bottom: 32px;
+    }
+
+    /* ─── PHONE FRAME ─── */
+    .phone-frame {
+      width: 200px;
+      height: 432px;
+      border: 2px solid rgba(47,85,138,0.2);
+      border-radius: 22px;
+      position: relative;
+      flex-shrink: 0;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    .phone-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    .phone-inner img,
+    .phone-inner video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+
+    /* ─── STEPS ─── */
+    .step-item {
+      border-top: 1px solid rgba(16,32,67,0.1);
+      padding: 32px 0;
+    }
+
+    .step-item:last-child {
+      border-bottom: 1px solid rgba(16,32,67,0.1);
+    }
+
+    .step-lead {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.85;
+      margin-bottom: 24px;
+    }
+
+    /* ─── 3-IMAGE ROW ─── */
+    .triple-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .phone-frame-sm {
+      width: 120px;
+      height: 260px;
+      border: 2px solid rgba(47,85,138,0.2);
+      border-radius: 16px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .phone-frame-sm .phone-inner {
+      border-radius: 14px;
+    }
+
+    .arrow-icon {
+      font-size: 1rem;
+      color: rgba(16,32,67,0.3);
+      flex-shrink: 0;
     }
   </style>
 </head>
 <body>
 
-  <div class="note">
-    <strong style="font-size:1.05rem; color:#102043;">ヤメッターの使い方</strong>
-    <br><br>
-    作成中
+  <!-- MAIN TITLE -->
+  <h1 class="page-title">ヤメッターの使い方</h1>
+  <p class="page-lead">チュートリアルだけではわかりにくいものを中心に説明しています。</p>
+
+  <div class="divider"></div>
+
+  <!-- となりに座る -->
+  <h2 class="section-title">「となりに座る」</h2>
+  <p class="section-lead">他の勉強・集中系アプリにはない新しい体験なので初めは迷うかもしれませんが一度やってみるとすぐ理解できると思います。自習室でとなりに人が座ると少し緊張してなぜか集中できてしまう。あの感じをアプリで再現しています。</p>
+
+  <!-- VIDEO -->
+  <div class="phone-frame" style="margin-bottom:40px;">
+    <div class="phone-inner">
+      <video src="mov/tonari.mp4" autoplay muted loop playsinline></video>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 始め方 -->
+  <h2 class="section-title">始め方</h2>
+
+  <div class="steps">
+
+    <div class="step-item">
+      <p class="step-lead">サイドメニューの「となり」をタップ</p>
+      <div class="phone-frame">
+        <div class="phone-inner">
+          <img src="img/tonari1.jpg" alt="となりをタップ">
+        </div>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <p class="step-lead">ここには「となりに座る」ウェルカムなユーザーのリストが表示されています。属性が近そうなユーザーのアイコンをタップしてみましょう。</p>
+      <div class="phone-frame">
+        <div class="phone-inner">
+          <img src="img/tonari2.jpg" alt="ユーザーリスト">
+        </div>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <p class="step-lead">プロフィール画面に進むと「となりに座る」ボタンが表示されているのでこれをタップ</p>
+      <div class="phone-frame">
+        <div class="phone-inner">
+          <img src="img/tonari3.jpg" alt="となりに座るボタン">
+        </div>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <p class="step-lead">20秒以内にタグと時間を決めてタイマーをスタートさせる必要があります（20秒は意外と長いです）<br>静かに着席ボタンを押すととなりに座るアニメーションが流れるので、この後にタグと時間を決めてタイマーをスタートさせます。</p>
+      <div class="triple-row">
+        <div class="phone-frame-sm">
+          <div class="phone-inner">
+            <img src="img/tonari4.jpg" alt="タグと時間を決める">
+          </div>
+        </div>
+        <span class="arrow-icon">›</span>
+        <div class="phone-frame-sm">
+          <div class="phone-inner">
+            <img src="img/tonari5.jpg" alt="着席アニメーション">
+          </div>
+        </div>
+        <span class="arrow-icon">›</span>
+        <div class="phone-frame-sm">
+          <div class="phone-inner">
+            <img src="img/tonari6.jpg" alt="タイマースタート">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <p class="step-lead">「となりに座る」で集中タイムが完了させると編集チケットがもらえます。このチケットはポストをあとから編集するためのアイテムです。</p>
+      <div class="phone-frame">
+        <div class="phone-inner">
+          <img src="img/tonari7.jpg" alt="編集チケット">
+        </div>
+      </div>
+    </div>
+
   </div>
 
 </body>
