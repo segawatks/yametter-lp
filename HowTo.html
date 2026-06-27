@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ヤメッターの使い方</title>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RETC3EGLDG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RETC3EGLDG');
+  </script>
   <style>
     :root {
       --primary: rgb(47,85,138);
@@ -176,6 +184,46 @@
       color: rgba(16,32,67,0.3);
       flex-shrink: 0;
     }
+
+    /* ─── なるほどボタン ─── */
+    .naruhodo-wrap {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 32px;
+    }
+
+    .naruhodo-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: none;
+      border: 1.5px solid rgba(47,85,138,0.2);
+      border-radius: 99px;
+      padding: 6px 16px;
+      font-size: 0.82rem;
+      font-family: inherit;
+      color: rgba(16,32,67,0.6);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .naruhodo-btn.tapped {
+      background: rgba(47,85,138,0.08);
+      border-color: var(--primary);
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .naruhodo-count {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: rgba(16,32,67,0.35);
+      min-width: 16px;
+    }
+
+    .naruhodo-btn.tapped .naruhodo-count {
+      color: var(--primary);
+    }
   </style>
 </head>
 <body>
@@ -188,7 +236,7 @@
 
   <!-- となりに座る -->
   <h2 class="section-title" id="tonari">となりに座る</h2>
-  <p class="section-lead">自習室でとなりに人が座ると少し緊張してなぜか集中できてしまう。あの感じをアプリで再現しています。新しい体験なので初めは迷うかもしれませんが一度やってみるとすぐ理解できると思います。</p>
+  <p class="section-lead">自習室でとなりに人が座ると少し緊張してなぜか集中できてしまう。あの感じをアプリで再現しています。</p>
 
   <!-- VIDEO -->
   <div class="phone-frame" style="margin-bottom:40px; display:none;">
@@ -263,6 +311,12 @@
 
   </div>
 
+  <div class="naruhodo-wrap">
+    <button class="naruhodo-btn" data-key="howto-tonari" onclick="naruhodo(this)">
+      参考になった <span class="naruhodo-count"></span>
+    </button>
+  </div>
+
   <div class="divider"></div>
 
   <!-- 1人で集中 -->
@@ -280,7 +334,7 @@
     </div>
 
     <div class="step-item">
-      <p class="step-lead">「1人で集中」を始めると「集中タイム中のユーザー」リストに掲載されます。つまりあなたがとなりに座られる側になります。より具体的なタグやプロフにしておくと近い属性のユーザーがとなりに座る可能性が高くなります。</p>
+      <p class="step-lead">「1人で集中」を始めると「集中タイム中のユーザー」リストに掲載されます。つまり<strong>あなたがとなりに座られる側になります。</strong>より具体的なタグやプロフにしておくと近い属性のユーザーがとなりに座る可能性が高くなります。</p>
       <div class="phone-frame">
         <div class="phone-inner">
           <img src="img/tonari2.jpg" alt="集中タイム中のユーザーリスト">
@@ -298,7 +352,7 @@
     </div>
 
     <div class="step-item">
-      <p class="step-lead">アプリを開くと画面上部にとなりに座ったユーザーのアイコン・タイマー・タグが表示されます。同様に相手にもあなたのタグ・タイマーが表示されています。<strong>完了・中断も相手に伝わります。</strong>プロフィールはタイマーが終わってからでないと見ることはできません。</p>
+      <p class="step-lead">アプリを開くと画面上部にとなりに座ったユーザーのアイコン・タイマー・タグが表示されます。同様に相手にもあなたの状況が表示されています。<strong>完了・中断も相手に伝わります。</strong>プロフィールはタイマーが終わってからでないと見ることはできません。</p>
       <div class="phone-frame">
         <div class="phone-inner">
           <img src="img/tonari10.jpg" alt="となりに座った画面">
@@ -317,6 +371,12 @@
 
   </div>
 
+  <div class="naruhodo-wrap">
+    <button class="naruhodo-btn" data-key="howto-solo" onclick="naruhodo(this)">
+      参考になった <span class="naruhodo-count"></span>
+    </button>
+  </div>
+
   <div class="divider"></div>
 
   <!-- スマやめ連携 -->
@@ -326,6 +386,7 @@
 
     <div class="step-item" style="padding-top:8px;">
       <p class="step-lead">スマホをやめれば魚が育つがインストールされていると、ヤメッターでの集中タイムもアイテムに変換されて取得できます。グラフにも相互に反映されます。</p>
+      <p style="font-size:0.88rem; color:var(--text); margin-bottom:16px;">※ヤメッターインストール前の記録は同期されません</p>
       <img src="img/LinkImg.png" alt="スマやめ連携" style="width:100%; height:auto; display:block;">
     </div>
 
@@ -340,11 +401,56 @@
 
   </div>
 
+  <div class="naruhodo-wrap">
+    <button class="naruhodo-btn" data-key="howto-sumayame" onclick="naruhodo(this)">
+      参考になった <span class="naruhodo-count"></span>
+    </button>
+  </div>
+
   <p class="page-lead" style="margin-top:48px;">今後も質問が多い項目の解説を追加していきます。質問はアンケートの記述欄か開発者に直接リプしていただいてもOKです。ほとんどの項目に(？)ボタンをつけているのでそちらもご参照をお願いいたします。</p>
 
   <script>
+    // 動画再生
     const v = document.getElementById('heroVideo');
     if (v) { v.play().catch(() => {}); }
+
+    // なるほどボタン
+    const API = 'https://abacus.jasoncameron.dev';
+
+    async function naruhodo(btn) {
+      const key = btn.dataset.key;
+      const stored = localStorage.getItem(key);
+      const countEl = btn.querySelector('.naruhodo-count');
+
+      if (stored) return; // 既にタップ済み
+
+      btn.disabled = true;
+      try {
+        const res = await fetch(`${API}/hit/${key}/naruhodo`);
+        const data = await res.json();
+        countEl.textContent = data.value;
+        btn.classList.add('tapped');
+        localStorage.setItem(key, '1');
+        // GA イベント
+        gtag('event', 'sanko_tap', { event_category: 'engagement', event_label: key });
+      } catch(e) {
+        btn.disabled = false;
+      }
+    }
+
+    // 初期カウント取得
+    document.querySelectorAll('.naruhodo-btn').forEach(async btn => {
+      const key = btn.dataset.key;
+      const countEl = btn.querySelector('.naruhodo-count');
+      if (localStorage.getItem(key)) btn.classList.add('tapped');
+      try {
+        const res = await fetch(`${API}/get/${key}/naruhodo`);
+        const data = await res.json();
+        countEl.textContent = data.value ?? 0;
+      } catch(e) {
+        countEl.textContent = '';
+      }
+    });
   </script>
 </body>
 </html>
