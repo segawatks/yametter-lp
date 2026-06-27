@@ -27,15 +27,15 @@
     /* ─── MAIN TITLE ─── */
     .page-title {
       font-size: 1.4rem;
-      font-weight: 900;
-      color: var(--primary);
+      font-weight: 700;
+      color: var(--text);
       letter-spacing: -0.01em;
       margin-bottom: 12px;
     }
 
     .page-lead {
-      font-size: 0.92rem;
-      color: rgba(16,32,67,0.65);
+      font-size: 1.05rem;
+      color: var(--text);
       line-height: 1.85;
     }
 
@@ -50,15 +50,25 @@
     /* ─── SECTION ─── */
     .section-title {
       font-size: 1.15rem;
-      font-weight: 800;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 14px;
+      line-height: 1.4;
+      border-left: 4px solid var(--primary);
+      padding-left: 12px;
+    }
+
+    .sub-title {
+      font-size: 1rem;
+      font-weight: 500;
       color: var(--text);
       margin-bottom: 14px;
       line-height: 1.4;
     }
 
     .section-lead {
-      font-size: 0.92rem;
-      color: rgba(16,32,67,0.75);
+      font-size: 1.05rem;
+      color: var(--text);
       line-height: 1.9;
       margin-bottom: 32px;
     }
@@ -94,16 +104,11 @@
 
     /* ─── STEPS ─── */
     .step-item {
-      border-top: 1px solid rgba(16,32,67,0.1);
       padding: 32px 0;
     }
 
-    .step-item:last-child {
-      border-bottom: 1px solid rgba(16,32,67,0.1);
-    }
-
     .step-lead {
-      font-size: 0.95rem;
+      font-size: 1.05rem;
       color: var(--text);
       line-height: 1.85;
       margin-bottom: 24px;
@@ -114,20 +119,21 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 6px;
     }
 
     .phone-frame-sm {
-      width: 120px;
-      height: 260px;
+      flex: 1 1 0;
+      min-width: 0;
+      aspect-ratio: 200 / 432;
       border: 2px solid rgba(47,85,138,0.2);
       border-radius: 16px;
       overflow: hidden;
-      flex-shrink: 0;
     }
 
     .phone-frame-sm .phone-inner {
       border-radius: 14px;
+      height: 100%;
     }
 
     .arrow-icon {
@@ -146,8 +152,8 @@
   <div class="divider"></div>
 
   <!-- となりに座る -->
-  <h2 class="section-title">「となりに座る」</h2>
-  <p class="section-lead">他の勉強・集中系アプリにはない新しい体験なので初めは迷うかもしれませんが一度やってみるとすぐ理解できると思います。自習室でとなりに人が座ると少し緊張してなぜか集中できてしまう。あの感じをアプリで再現しています。</p>
+  <h2 class="section-title">となりに座る</h2>
+  <p class="section-lead">自習室でとなりに人が座ると少し緊張してなぜか集中できてしまう。あの感じをアプリで再現しています。新しい体験なので初めは迷うかもしれませんが一度やってみるとすぐ理解できると思います。</p>
 
   <!-- VIDEO -->
   <div class="phone-frame" style="margin-bottom:40px;">
@@ -156,14 +162,12 @@
     </div>
   </div>
 
-  <div class="divider"></div>
-
   <!-- 始め方 -->
-  <h2 class="section-title">始め方</h2>
+  <h2 class="sub-title" style="margin-top:40px;">始め方</h2>
 
   <div class="steps">
 
-    <div class="step-item">
+    <div class="step-item" style="padding-top:8px;">
       <p class="step-lead">サイドメニューの「となり」をタップ</p>
       <div class="phone-frame">
         <div class="phone-inner">
@@ -191,7 +195,7 @@
     </div>
 
     <div class="step-item">
-      <p class="step-lead">20秒以内にタグと時間を決めてタイマーをスタートさせる必要があります（20秒は意外と長いです）<br>静かに着席ボタンを押すととなりに座るアニメーションが流れるので、この後にタグと時間を決めてタイマーをスタートさせます。</p>
+      <p class="step-lead">「静かに着席」ボタンを押すと、となりに座るアニメーションが流れるので、そのあとで「タグ」と「時間」を決めてタイマーをスタートさせましょう。</p>
       <div class="triple-row">
         <div class="phone-frame-sm">
           <div class="phone-inner">
@@ -223,6 +227,62 @@
     </div>
 
   </div>
+
+  <div class="divider"></div>
+
+  <!-- 1人で集中 -->
+  <h2 class="section-title">1人で集中</h2>
+
+  <div class="steps">
+
+    <div class="step-item" style="padding-top:8px;">
+      <p class="step-lead">これは文字通り初めは1人で集中するモードです「パートナー検索」の下の「1人で集中」から始めます。</p>
+      <div class="phone-frame">
+        <div class="phone-inner">
+          <img src="img/tonari8.jpg" alt="1人で集中">
+        </div>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <p class="step-lead">「1人で集中」を始めると「集中タイム中のユーザー」リストに掲載されます。つまりあなたがとなりに座られる側になります。より具体的なタグやプロフにしておくと近い属性のユーザーがとなりに座る可能性が高くなります。</p>
+      <div class="phone-frame">
+        <div class="phone-inner">
+          <img src="img/tonari2.jpg" alt="集中タイム中のユーザーリスト">
+        </div>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <p class="step-lead">となりに座られると「XXXがとなりに座りました」と通知が届きます。</p>
+      <div class="phone-frame">
+        <div class="phone-inner">
+          <img src="img/tonari9.jpg" alt="通知">
+        </div>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <p class="step-lead">アプリを開くと画面上部にとなりに座ったユーザーのアイコン・タイマー・タグが表示されます。同様に相手にもあなたのタグ・タイマーが表示されています。プロフィールはタイマーが終わってからでないと見ることはできません。</p>
+      <div class="phone-frame">
+        <div class="phone-inner">
+          <img src="img/tonari10.jpg" alt="となりに座った画面">
+        </div>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <p class="step-lead">もし本当に1人で集中したい時は設定のとなりに座る項目のスイッチを全部OFFにしてください。誰もとなりに座ることができなくなります。「☆3以上のユーザーを許可」だけオフにすると相互フォローユーザーのみに座るのを許可します。</p>
+      <div class="phone-frame">
+        <div class="phone-inner">
+          <img src="img/tonari11.jpg" alt="設定画面">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="page-lead" style="margin-top:48px;">今後も質問が多い項目の解説を追加していきます。ほとんどの項目に(？)ボタンをつけているのでそちらもご参照をお願いいたします。</p>
 
 </body>
 </html>
