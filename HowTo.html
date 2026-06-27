@@ -24,6 +24,41 @@
       margin: 0 auto;
     }
 
+    /* ─── TOC ─── */
+    .toc {
+      margin-bottom: 32px;
+    }
+
+    .toc-header {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: rgba(16,32,67,0.45);
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+
+    .toc a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 0;
+      border-top: 1px solid rgba(16,32,67,0.08);
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.7rem;
+    }
+
+    .toc a:first-of-type {
+      border-top: none;
+    }
+
+    .toc-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: rgba(16,32,67,0.3);
+      min-width: 20px;
+    }
+
     /* ─── MAIN TITLE ─── */
     .page-title {
       font-size: 1.4rem;
@@ -145,10 +180,14 @@
 </head>
 <body>
 
-  <p class="page-lead" style="margin-bottom:32px;">チュートリアルだけではわかりにくいものを中心に説明しています。</p>
+  <nav class="toc">
+    <a href="#tonari"><span class="toc-num">01</span>となりに座る</a>
+    <a href="#solo"><span class="toc-num">02</span>1人で集中</a>
+    <a href="#sumayame"><span class="toc-num">03</span>スマやめ連携</a>
+  </nav>
 
   <!-- となりに座る -->
-  <h2 class="section-title">となりに座る</h2>
+  <h2 class="section-title" id="tonari">となりに座る</h2>
   <p class="section-lead">自習室でとなりに人が座ると少し緊張してなぜか集中できてしまう。あの感じをアプリで再現しています。新しい体験なので初めは迷うかもしれませんが一度やってみるとすぐ理解できると思います。</p>
 
   <!-- VIDEO -->
@@ -227,7 +266,7 @@
   <div class="divider"></div>
 
   <!-- 1人で集中 -->
-  <h2 class="section-title">1人で集中</h2>
+  <h2 class="section-title" id="solo">1人で集中</h2>
 
   <div class="steps">
 
@@ -272,6 +311,29 @@
       <div class="phone-frame">
         <div class="phone-inner">
           <img src="img/tonari11.jpg" alt="設定画面">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- スマやめ連携 -->
+  <h2 class="section-title" id="sumayame">スマやめ連携</h2>
+
+  <div class="steps">
+
+    <div class="step-item" style="padding-top:8px;">
+      <p class="step-lead">スマホをやめれば魚が育つがインストールされていると、ヤメッターでの集中タイムもアイテムに変換されて取得できます。グラフにも相互に反映されます。</p>
+      <img src="img/LinkImg.png" alt="スマやめ連携" style="width:100%; height:auto; display:block;">
+    </div>
+
+    <div class="step-item">
+      <p class="step-lead">ただし連携しているとどちらかのタイマーが動作しているときはもう一方のタイマーは開始できなくなります。設定で連携をOFFにできます。</p>
+      <div class="phone-frame">
+        <div class="phone-inner">
+          <img src="img/sumaren.jpg" alt="連携設定">
         </div>
       </div>
     </div>
