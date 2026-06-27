@@ -75,8 +75,8 @@
 
     /* ─── PHONE FRAME ─── */
     .phone-frame {
-      width: 170px;
-      height: 367px;
+      width: 136px;
+      height: 294px;
       border: 2px solid rgba(47,85,138,0.2);
       border-radius: 22px;
       position: relative;
@@ -154,7 +154,7 @@
   <!-- VIDEO -->
   <div class="phone-frame" style="margin-bottom:40px;">
     <div class="phone-inner">
-      <video src="mov/tonari.mp4" autoplay muted loop playsinline></video>
+      <video id="heroVideo" src="mov/tonari.mp4" autoplay muted loop playsinline webkit-playsinline></video>
     </div>
   </div>
 
@@ -280,5 +280,9 @@
 
   <p class="page-lead" style="margin-top:48px;">今後も質問が多い項目の解説を追加していきます。ほとんどの項目に(？)ボタンをつけているのでそちらもご参照をお願いいたします。</p>
 
+  <script>
+    const v = document.getElementById('heroVideo');
+    if (v) { v.play().catch(() => {}); }
+  </script>
 </body>
 </html>
