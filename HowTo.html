@@ -49,7 +49,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      padding: 7px 0;
+      padding: 4px 0;
       border-top: 1px solid rgba(16,32,67,0.08);
       text-decoration: none;
       color: var(--text);
@@ -119,7 +119,6 @@
     /* ─── PHONE FRAME ─── */
     .phone-frame {
       width: 180px;
-      aspect-ratio: 200 / 432;
       border: 2px solid rgba(47,85,138,0.2);
       border-radius: 22px;
       overflow: hidden;
@@ -128,7 +127,6 @@
 
     .phone-inner {
       width: 100%;
-      height: 100%;
       border-radius: 20px;
       overflow: hidden;
       background: var(--bg);
@@ -136,14 +134,13 @@
 
     .phone-inner img {
       width: 100%;
-      height: 100%;
-      object-fit: contain;
+      height: auto;
       display: block;
     }
 
     .phone-inner video {
       width: 100%;
-      height: 100%;
+      aspect-ratio: 200 / 432;
       object-fit: cover;
       object-position: top;
       display: block;
@@ -195,12 +192,11 @@
       display: flex;
       gap: 12px;
       justify-content: center;
-      padding: 0 100px;
     }
 
     .double-row .phone-frame-sm {
-      width: 100%;
-      aspect-ratio: 200 / 432;
+      flex: 0 0 200px;
+      width: 200px;
       border: 2px solid rgba(47,85,138,0.2);
       border-radius: 22px;
       overflow: hidden;
@@ -208,24 +204,23 @@
 
     .double-row .phone-frame-sm .phone-inner {
       border-radius: 20px;
-      height: 100%;
     }
 
     .double-row .phone-frame-sm img {
       width: 100%;
-      height: 100%;
-      object-fit: contain;
+      height: auto;
       display: block;
     }
 
     .double-caption {
       display: flex;
       gap: 12px;
-      padding: 0 100px;
+      justify-content: center;
     }
 
     .double-caption span {
-      flex: 1;
+      flex: 0 0 200px;
+      width: 200px;
       font-size: 0.72rem;
       color: var(--text);
       text-align: center;
@@ -581,21 +576,14 @@
       <div style="text-align:center; margin-bottom:20px;">
         <a href="https://support.apple.com/ja-jp/118610" target="_blank" rel="noopener" style="font-size:0.82rem; color:var(--primary); border-bottom:1px solid rgba(47,85,138,0.3); text-decoration:none;">ウィジェットの設定方法</a>
       </div>
-      <div class="phone-frame">
-        <div class="phone-inner">
-          <img src="img/widjet1.jpg" alt="ウィジェット1">
-        </div>
+      <div class="double-caption" style="margin-bottom:8px;">
+        <span>ホーム画面ウィジェット</span>
+        <span>ロック画面ウィジェット</span>
       </div>
-      <p style="font-size:0.78rem; color:rgba(16,32,67,0.5); text-align:center; margin-top:8px;">ホーム画面ウィジェット</p>
-    </div>
-
-    <div class="step-item">
-      <div class="phone-frame">
-        <div class="phone-inner">
-          <img src="img/widjet2.jpg" alt="ウィジェット2">
-        </div>
+      <div class="double-row">
+        <div class="phone-frame-sm"><div class="phone-inner"><img src="img/widjet1.jpg" alt="ウィジェット1"></div></div>
+        <div class="phone-frame-sm"><div class="phone-inner"><img src="img/widjet2.jpg" alt="ウィジェット2"></div></div>
       </div>
-      <p style="font-size:0.78rem; color:rgba(16,32,67,0.5); text-align:center; margin-top:8px;">ロック画面ウィジェット</p>
     </div>
 
   </div>
