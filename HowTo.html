@@ -119,11 +119,9 @@
     /* ─── PHONE FRAME ─── */
     .phone-frame {
       width: 180px;
-      height: 389px;
+      aspect-ratio: 200 / 432;
       border: 2px solid rgba(47,85,138,0.2);
       border-radius: 22px;
-      position: relative;
-      flex-shrink: 0;
       overflow: hidden;
       margin: 0 auto;
     }
@@ -136,7 +134,13 @@
       background: var(--bg);
     }
 
-    .phone-inner img,
+    .phone-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
     .phone-inner video {
       width: 100%;
       height: 100%;
@@ -177,6 +181,112 @@
     .phone-frame-sm .phone-inner {
       border-radius: 14px;
       height: 100%;
+    }
+
+    .phone-frame-sm img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* ─── 2-IMAGE ROW ─── */
+    .double-row {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      padding: 0 100px;
+    }
+
+    .double-row .phone-frame-sm {
+      width: 100%;
+      aspect-ratio: 200 / 432;
+      border: 2px solid rgba(47,85,138,0.2);
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    .double-row .phone-frame-sm .phone-inner {
+      border-radius: 20px;
+      height: 100%;
+    }
+
+    .double-row .phone-frame-sm img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .double-caption {
+      display: flex;
+      gap: 12px;
+      padding: 0 100px;
+    }
+
+    .double-caption span {
+      flex: 1;
+      font-size: 0.72rem;
+      color: var(--text);
+      text-align: center;
+    }
+
+    .img-col {
+      flex: 1 1 0;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .img-caption {
+      font-size: 0.72rem;
+      color: var(--text);
+      text-align: center;
+      margin-bottom: 6px;
+      width: 100%;
+    }
+
+    /* ─── RANK ─── */
+    .rank-heading {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 24px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(16,32,67,0.1);
+    }
+
+    .rank-item {
+      margin-bottom: 16px;
+    }
+
+    .rank-star {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .rank-desc {
+      font-size: 1.05rem;
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    .rank-note {
+      font-size: 1.05rem;
+      color: rgba(16,32,67,0.6);
+      margin-top: 4px;
+      line-height: 1.7;
+    }
+
+    .rank-bullets {
+      font-size: 1.05rem;
+      color: var(--text);
+      line-height: 1.8;
+      padding-left: 1em;
+      margin: 4px 0;
     }
 
     .arrow-icon {
@@ -233,7 +343,8 @@
     <a href="#tonari"><span class="toc-num">01</span>となりに座る</a>
     <a href="#solo"><span class="toc-num">02</span>1人で集中</a>
     <a href="#sumayame"><span class="toc-num">03</span>スマやめ連携</a>
-    <a href="#widget"><span class="toc-num">04</span>ウィジェット</a>
+    <a href="#rank"><span class="toc-num">04</span>ランク</a>
+    <a href="#widget"><span class="toc-num">05</span>ウィジェット</a>
   </nav>
 
   <!-- となりに座る -->
@@ -405,6 +516,55 @@
 
   <div class="naruhodo-wrap">
     <button class="naruhodo-btn" data-key="howto-sumayame" onclick="naruhodo(this)">
+      参考になった <span class="naruhodo-count"></span>
+    </button>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ランク -->
+  <h2 class="section-title" id="rank">ランク</h2>
+
+  <div class="steps">
+
+    <div class="step-item" style="padding-top:8px;">
+      <p class="step-lead">サイドメニューとプロフィールに表示される☆の数がランクです。ランクは2時間集中タイムで☆1加算され最大☆5です。集中タイム中に中断すると☆1減ります。</p>
+      <div class="double-row">
+        <div class="phone-frame-sm"><div class="phone-inner"><img src="img/rank1.jpg" alt="ランク表示1"></div></div>
+        <div class="phone-frame-sm"><div class="phone-inner"><img src="img/rank2.jpg" alt="ランク表示2"></div></div>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <p class="rank-heading">ランク数で可能になること</p>
+
+      <div class="rank-item">
+        <p class="rank-star">☆3：となりに座るの条件クリア</p>
+        <p class="rank-desc">となりに座るは設定で2つの条件のON/OFFを切り替えることができます。</p>
+        <p class="rank-bullets">・相互フォローを許可<br>・☆3以上のユーザーを許可</p>
+<p class="rank-desc" style="margin-top:8px;">この「☆3以上のユーザーを許可」をクリアすることになるので、となりに座る・座られるが可能になります。逆に☆3未満だと他のユーザーのとなりに座ることも座られることもできません。「集中タイム中のユーザー」リストにも誰も表示されなくなります。</p>
+      </div>
+
+      <div class="double-caption" style="margin-bottom:8px;">
+        <span>設定：となりに座る</span>
+        <span>☆3未満だと誰も表示されない</span>
+      </div>
+      <div class="double-row">
+        <div class="phone-frame-sm"><div class="phone-inner"><img src="img/rank3.jpg" alt="設定：となりに座る"></div></div>
+        <div class="phone-frame-sm"><div class="phone-inner"><img src="img/rank4.jpg" alt="☆3未満の表示"></div></div>
+      </div>
+      <p class="rank-star" style="margin-top:16px;">☆5：画像ポスト解放</p>
+      <p class="rank-desc">通常のポストに画像を添付できるようになります。</p>
+    </div>
+
+    <div class="step-item">
+      <p class="step-lead">ランクは毎月1日0:00にリセットされ☆0になります。つまり<strong>月初は☆3になるまで「パートナー検索」と「1人で集中」しか使えなくなります。</strong></p>
+    </div>
+
+  </div>
+
+  <div class="naruhodo-wrap">
+    <button class="naruhodo-btn" data-key="howto-rank" onclick="naruhodo(this)">
       参考になった <span class="naruhodo-count"></span>
     </button>
   </div>
