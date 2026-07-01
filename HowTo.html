@@ -340,6 +340,7 @@
     <a href="#sumayame"><span class="toc-num">03</span>スマやめ連携</a>
     <a href="#rank"><span class="toc-num">04</span>ランク</a>
     <a href="#widget"><span class="toc-num">05</span>ウィジェット</a>
+    <a href="#block"><span class="toc-num">06</span>禁止アプリがブロックされない</a>
   </nav>
 
   <!-- となりに座る -->
@@ -590,6 +591,50 @@
 
   <div class="naruhodo-wrap">
     <button class="naruhodo-btn" data-key="howto-widget" onclick="naruhodo(this)">
+      参考になった <span class="naruhodo-count"></span>
+    </button>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 禁止アプリがブロックされない -->
+  <h2 class="section-title" id="block">禁止アプリがブロックされない</h2>
+
+  <div class="steps">
+
+    <div class="step-item" style="padding-top:8px;">
+      <p class="step-lead">ほとんどの場合、以下の操作で復旧します（効果が高い順）。</p>
+    </div>
+
+    <div class="step-item" style="padding-top:8px;">
+      <p class="rank-star">1. 禁止アプリを選び直す</p>
+      <p class="rank-desc">ヤメッター内で禁止アプリの選択を一度すべて解除し、もう一度選び直して保存してください。これで新しい識別情報が割り当てられ、最も多くのケースで直ります。</p>
+    </div>
+
+    <div class="step-item" style="padding-top:8px;">
+      <p class="rank-star">2. iPhoneを再起動する</p>
+      <p class="rank-desc">電源を切って入れ直すと、iOSとの連携が張り直されます。</p>
+    </div>
+
+    <div class="step-item" style="padding-top:8px;">
+      <p class="rank-star">3. スクリーンタイムの制限を入れ直す</p>
+      <p class="rank-desc">設定 → アプリ → ヤメッター → スクリーンタイムの制限をオフにして、もう一度オンに戻してください。オンにした直後に許可を求められたら「許可」を選んでください。</p>
+    </div>
+
+    <div class="step-item" style="padding-top:8px;">
+      <p class="rank-star">4. iOSを最新にアップデートする</p>
+      <p class="rank-desc">この不具合はiOSの更新で改善する場合があります。</p>
+    </div>
+
+    <div class="step-item" style="padding-top:8px;">
+      <p style="font-size:0.75rem; font-weight:700; color:rgba(16,32,67,0.45); letter-spacing:0.04em; margin-bottom:8px;">詳しい解説</p>
+      <p style="font-size:0.88rem; color:rgba(16,32,67,0.8); line-height:1.75;">ヤメッターのアプリブロックは、Appleの「スクリーンタイム」機能（Screen Time API）を利用して実現しています。そのためアプリ本体ではなくiOS側の状態に依存しており、iOSのアップデート後などに、iOSがアプリに渡す「ブロック対象アプリの識別情報（トークン）」がズレてしまうと、選んだはずのアプリがブロックされなくなることがあります。iOS側の既知の不具合で、ヤメッター側だけでは根本解決ができない部分です。私も含め複数の開発者がAppleに報告していますが未だ修正されていないのが現状です。</p>
+    </div>
+
+  </div>
+
+  <div class="naruhodo-wrap">
+    <button class="naruhodo-btn" data-key="howto-block" onclick="naruhodo(this)">
       参考になった <span class="naruhodo-count"></span>
     </button>
   </div>

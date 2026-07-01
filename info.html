@@ -298,6 +298,29 @@
     テストを開始したのが4月後半なので2ヶ月もかかりました💦長い間テストにご参加いただきありがとうございました。引き続きよろしくお願いいたします。
   </div>
   <div class="note">
+    <strong style="font-size:1.05rem; color:#102043;">禁止アプリがブロックされない</strong>
+    <br><br>
+    ほとんどの場合、以下の操作で復旧します（効果が高い順）。
+    <br><br>
+    <strong>1. 禁止アプリを選び直す</strong><br>
+    　ヤメッター内で禁止アプリの選択を一度すべて解除し、もう一度選び直して保存してください。これで新しい識別情報が割り当てられ、最も多くのケースで直ります。
+    <br><br>
+    <strong>2. iPhoneを再起動する</strong><br>
+    　電源を切って入れ直すと、iOSとの連携が張り直されます。
+    <br><br>
+    <strong>3. スクリーンタイムの制限を入れ直す</strong><br>
+    　設定 → アプリ → ヤメッター → スクリーンタイムの制限をオフにして、もう一度オンに戻してください。オンにした直後に許可を求められたら「許可」を選んでください。
+    <br><br>
+    <strong>4. iOSを最新にアップデートする</strong><br>
+    　この不具合はiOSの更新で改善する場合があります。
+    <br><br>
+    <p style="font-size:0.75rem; font-weight:700; color:rgba(16,32,67,0.45); letter-spacing:0.04em; margin-bottom:6px;">メタな解説</p>
+    ヤメッターのアプリブロックは、Appleの「スクリーンタイム」機能（Screen Time API）を利用して実現しています。そのためアプリ本体ではなくiOS側の状態に依存しており、iOSのアップデート後などに、iOSがアプリに渡す「ブロック対象アプリの識別情報（トークン）」がズレてしまうと、選んだはずのアプリがブロックされなくなることがあります。これは特定のiOSバージョンで報告されているiOS側の既知の不具合で、ヤメッター側だけでは根本解決ができない部分です。
+    <br><br>
+    ※ 上記はiOS側の状態をリセットする操作のため、しばらくして再発することがあります。その場合はお手数ですが、同じ手順（特に「1. 禁止アプリを選び直す」）を再度お試しください。改善しない場合は、機種名・iOSバージョンを添えてお問い合わせいただければ個別に確認します。
+  </div>
+
+  <div class="note">
     <a href="https://apps.apple.com/jp/app/%E3%83%A4%E3%83%A1%E3%83%83%E3%82%BF%E3%83%BC/id6755225951" target="_blank" rel="noopener" style="display:block; border:1px solid rgba(16,32,67,0.15); border-radius:12px; overflow:hidden; text-decoration:none; color:inherit;">
       <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7d/71/8a/7d718ad7-da02-8fbe-2ace-b52ad2456451/Placeholder.mill/1200x630wa.jpg" alt="ヤメッターアプリ - App Store" style="width:100%; height:auto; display:block;">
       <div style="padding:12px 16px;">
