@@ -179,7 +179,8 @@
 
     .update-scroll {
       max-height: 180px;
-      overflow-y: auto;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
       border: 1px solid rgba(16,32,67,0.1);
       border-radius: 10px;
       padding: 12px 16px;
@@ -238,6 +239,17 @@
     .note:first-child::before {
       display: none;
     }
+    .note.no-before::before { display: none; }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: rgb(16,32,67);
+      margin-bottom: 14px;
+      line-height: 1.4;
+      border-left: 4px solid rgb(47,85,138);
+      padding-left: 12px;
+    }
   </style>
 </head>
 <body>
@@ -245,7 +257,15 @@
   <div class="update-section">
     <p class="update-label">最近の更新内容</p>
     <div class="update-scroll">
-      <p class="update-ver">ver.1.2.2</p>
+      <p class="update-ver">ver.1.2.4</p>
+      <ul class="update-list">
+        <li>チュートリアル進行不能バグを修正</li>
+        <li>履歴タブにフィルタを追加</li>
+        <li>背景画像を拡大表示できるように</li>
+        <li>セキュリティ強化</li>
+        <li>いくつかの細かな改善</li>
+      </ul>
+      <p class="update-ver" style="margin-top:12px;">ver.1.2.2</p>
       <ul class="update-list">
         <li>機種変更・再インストールでのデータ不整合を修正</li>
         <li>ポスト最大文字数を200文字に変更</li>
@@ -261,6 +281,7 @@
     </div>
   </div>
 
+  <!-- 毎月のリセットについて（非表示）
   <div class="note">
     <strong style="font-size:1.05rem; color:#102043;">毎月のリセットについて</strong>
     <br><br>
@@ -276,28 +297,21 @@
     <br><br>
     ランクについて詳しくは<a href="HowTo.html" style="color:#102043;">ヤメッターの使い方</a>でも解説しています。
   </div>
+  -->
 
   <div class="note">
-    <strong style="font-size:1.05rem; color:#102043;">新規ユーザー様へ</strong>
-    <br><br>
     ダウンロードありがとうございます。今後はこちらにアップデート情報などを掲載いたします。不具合・要望はアンケートの記述欄、開発者アカウントへのリプ、メール・Xまでお願いいたします。
     <br><br>
     <a href="mailto:yamettersp@gmail.com" style="color:#102043;">yamettersp@gmail.com</a><br>
     <a href="https://x.com/sumayame_segawa" target="_blank" rel="noopener" style="color:#102043;">𝕏 @sumayame_segawa</a>
   </div>
 
-  <div class="note">
-    <strong style="font-size:1.05rem; color:#102043;">オープンテストからご利用いただいているユーザー様へ</strong>
-    <br><br>
-    <strong style="font-size:1.05rem; color:#102043;">正式版リリースできました！</strong>
-    <br><br>
-    数週間前に特典は締め切っていたんですが現在AppleSignInしていただいているユーザー全員に特典を配布することにしました。サイドメニューに「テスター特典」ボタンが表示されているはずなのでそちらからダウンロードと特典反映が同時にすすめられます。（途中でわかりにくいアラートがいくつか出ますが課金されたりはしないので全部OKで進んでください）
-    <br><br>
-    AppleSignInしているのに「テスター特典」ボタンが表示されない場合はしたのリンクから直接ダウンロードしてもらうと「テスター特典」ボタンが表示されるようになるはずです。うまくいかない場合はリプでお知らせください。
-    <br><br>
-    テストを開始したのが4月後半なので2ヶ月もかかりました💦長い間テストにご参加いただきありがとうございました。引き続きよろしくお願いいたします。
-  </div>
-  <div class="note">
+  <div style="width:90%; height:1px; background:rgba(16,32,67,0.15); margin:36px auto;"></div>
+  <h2 class="section-title">よくある質問</h2>
+
+  <p style="font-size:0.88rem; color:rgb(16,32,67); margin-top:12px;"><a href="HowTo.html" style="color:rgb(47,85,138); text-decoration:underline;">ヤメッターの使い方</a>もご参照ください</p>
+
+  <div class="note no-before" style="margin-top:20px; padding-top:0;">
     <strong style="font-size:1.05rem; color:#102043;">禁止アプリがブロックされない</strong>
     <br><br>
     ほとんどの場合、以下の操作で復旧します（効果が高い順）。
@@ -314,22 +328,12 @@
     <strong>4. iOSを最新にアップデートする</strong><br>
     　この不具合はiOSの更新で改善する場合があります。
     <br><br>
-    <p style="font-size:0.75rem; font-weight:700; color:rgba(16,32,67,0.45); letter-spacing:0.04em; margin-bottom:6px;">メタな解説</p>
+    <p style="font-size:0.75rem; font-weight:700; color:rgba(16,32,67,0.45); letter-spacing:0.04em; margin-bottom:6px;">詳しい解説</p>
     ヤメッターのアプリブロックは、Appleの「スクリーンタイム」機能（Screen Time API）を利用して実現しています。そのためアプリ本体ではなくiOS側の状態に依存しており、iOSのアップデート後などに、iOSがアプリに渡す「ブロック対象アプリの識別情報（トークン）」がズレてしまうと、選んだはずのアプリがブロックされなくなることがあります。これは特定のiOSバージョンで報告されているiOS側の既知の不具合で、ヤメッター側だけでは根本解決ができない部分です。
     <br><br>
     ※ 上記はiOS側の状態をリセットする操作のため、しばらくして再発することがあります。その場合はお手数ですが、同じ手順（特に「1. 禁止アプリを選び直す」）を再度お試しください。改善しない場合は、機種名・iOSバージョンを添えてお問い合わせいただければ個別に確認します。
   </div>
 
-  <div class="note">
-    <a href="https://apps.apple.com/jp/app/%E3%83%A4%E3%83%A1%E3%83%83%E3%82%BF%E3%83%BC/id6755225951" target="_blank" rel="noopener" style="display:block; border:1px solid rgba(16,32,67,0.15); border-radius:12px; overflow:hidden; text-decoration:none; color:inherit;">
-      <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7d/71/8a/7d718ad7-da02-8fbe-2ace-b52ad2456451/Placeholder.mill/1200x630wa.jpg" alt="ヤメッターアプリ - App Store" style="width:100%; height:auto; display:block;">
-      <div style="padding:12px 16px;">
-        <p style="font-size:0.78rem; color:rgba(16,32,67,0.5); margin-bottom:2px;">App Store</p>
-        <p style="font-size:0.92rem; font-weight:700; color:#102043; line-height:1.4;">ヤメッターアプリ</p>
-        <p style="font-size:0.78rem; color:rgba(16,32,67,0.55); margin-top:2px; line-height:1.5;">Takeshi Segawaの「ヤメッター」をApp Storeでダウンロード</p>
-      </div>
-    </a>
-  </div>
 
 </body>
 </html>
