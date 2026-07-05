@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>戒特 最新消息</title>
+  <style>
+    :root {
+      --primary: rgb(47,85,138);
+      --text: rgb(16,32,67);
+      --bg: rgb(253,255,249);
+      --accent: rgb(250,140,230);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'PingFang TC', -apple-system, 'Hiragino Sans', sans-serif;
+      line-height: 1.6;
+      padding: 40px 24px 80px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    h1 { font-size: 1.1rem; font-weight: 800; color: var(--primary); margin-bottom: 12px; letter-spacing: 0.02em; }
+    .lead { font-size: 0.88rem; color: var(--text); margin-bottom: 40px; font-weight: 500; opacity: 0.75; }
+    .roadmap { position: relative; padding-left: 28px; }
+    .roadmap::before { content: ''; position: absolute; left: 7px; top: 12px; bottom: 12px; width: 2px; background: rgba(47,85,138,0.15); }
+    .step { position: relative; margin-bottom: 20px; }
+    .step::before { content: ''; position: absolute; left: -27px; top: 50%; transform: translateY(-50%); width: 14px; height: 14px; border-radius: 50%; background: var(--primary); z-index: 1; }
+    .step.now::before { background: var(--accent); box-shadow: 0 0 0 4px rgba(250,140,230,0.2); }
+    .bubble { position: relative; z-index: 1; background: #fff; border: 1.5px solid rgba(47,85,138,0.12); border-radius: 12px; padding: 12px 16px; box-shadow: 0 2px 8px rgba(47,85,138,0.06); }
+    .step.now .bubble { border-color: rgba(250,140,230,0.4); background: rgba(255,245,253,1); }
+    .bubble::before { content: ''; position: absolute; left: -8px; top: 50%; transform: translateY(-50%); border-style: solid; border-width: 7px 8px 7px 0; border-color: transparent rgba(47,85,138,0.12) transparent transparent; }
+    .bubble::after { content: ''; position: absolute; left: -6px; top: 50%; transform: translateY(-50%); border-style: solid; border-width: 6px 7px 6px 0; border-color: transparent #fff transparent transparent; }
+    .step.now .bubble::after { border-color: transparent rgba(255,245,253,1) transparent transparent; }
+    .step.now .bubble::before { border-color: transparent rgba(250,140,230,0.4) transparent transparent; }
+    .step-label { font-size: 0.65rem; font-weight: 800; color: #fff; background: var(--accent); display: inline-block; padding: 1px 8px; border-radius: 99px; margin-bottom: 4px; letter-spacing: 0.06em; font-size: 0.75rem; transform: translateY(-3px); }
+    .step-text { font-size: 0.88rem; font-weight: 600; color: var(--text); line-height: 1.5; }
+    .step.last .step-text { color: var(--primary); font-weight: 800; }
+    .step-sub { font-size: 0.75rem; font-weight: 400; color: rgba(16,32,67,0.55); margin-top: 3px; }
+    .update-section { margin-bottom: 36px; }
+    .update-label { font-size: 0.72rem; font-weight: 700; color: rgba(16,32,67,0.45); letter-spacing: 0.06em; margin-bottom: 8px; }
+    .update-scroll { max-height: 180px; overflow-y: scroll; -webkit-overflow-scrolling: touch; border: 1px solid rgba(16,32,67,0.1); border-radius: 10px; padding: 12px 16px; background: rgba(16,32,67,0.02); }
+    .update-ver { font-size: 0.8rem; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+    .update-list { list-style: none; padding: 0; }
+    .update-list li { font-size: 0.82rem; color: var(--text); line-height: 1.7; padding-left: 1em; position: relative; }
+    .update-list li::before { content: '-'; position: absolute; left: 0; color: rgba(16,32,67,0.4); }
+    .note { margin-top: 36px; padding-top: 36px; font-size: 1rem; color: #102043; line-height: 1.85; }
+    .note::before { content: ''; display: block; width: 90%; height: 1px; background: rgba(16,32,67,0.15); margin: 0 auto 36px; }
+    .note:first-child { margin-top: 0; padding-top: 0; }
+    .note:first-child::before { display: none; }
+    .note.no-before::before { display: none; }
+    .section-title { font-size: 1.15rem; font-weight: 600; color: rgb(16,32,67); margin-bottom: 14px; line-height: 1.4; border-left: 4px solid rgb(47,85,138); padding-left: 12px; }
+  </style>
+</head>
+<body>
+
+  <div class="update-section">
+    <p class="update-label">最新更新內容</p>
+    <div class="update-scroll">
+      <p class="update-ver">ver.1.2.4</p>
+      <ul class="update-list">
+        <li>修正教學流程卡住的問題</li>
+        <li>在歷史記錄分頁新增篩選功能</li>
+        <li>可放大顯示背景圖片</li>
+        <li>強化安全性</li>
+        <li>其他細部改善</li>
+      </ul>
+      <p class="update-ver" style="margin-top:12px;">ver.1.2.2</p>
+      <ul class="update-list">
+        <li>修正換機或重新安裝後資料不一致的問題</li>
+        <li>貼文最大字數改為200字</li>
+        <li>各項改善與修正</li>
+      </ul>
+      <p class="update-ver" style="margin-top:12px;">ver.1.2.1</p>
+      <ul class="update-list">
+        <li>新增專注時間中30秒解除功能</li>
+        <li>新增圖片貼文的編輯功能</li>
+        <li>修正已編輯貼文同步顯示於歷史記錄分頁</li>
+        <li>修正含半形字元標籤的顯示問題</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note">
+    感謝您下載。今後將在此發布更新資訊等。如有問題或建議，請透過問卷留言欄、開發者帳號回覆、Email或X與我們聯繫。
+    <br><br>
+    <a href="mailto:yamettersp@gmail.com" style="color:#102043;">yamettersp@gmail.com</a><br>
+    <a href="https://x.com/sumayame_segawa" target="_blank" rel="noopener" style="color:#102043;">𝕏 @sumayame_segawa</a>
+  </div>
+
+  <div style="width:90%; height:1px; background:rgba(16,32,67,0.15); margin:36px auto;"></div>
+  <h2 class="section-title">常見問題</h2>
+  <p style="font-size:0.88rem; color:rgb(16,32,67); margin-top:12px;"><a href="https://segawatks.github.io/yametter-lp/HowTo_zhHant.html" style="color:rgb(47,85,138); text-decoration:underline;">戒特使用說明</a>也請一併參閱</p>
+
+  <div class="note no-before" style="margin-top:20px; padding-top:0;">
+    <strong style="font-size:1.05rem; color:#102043;">封鎖App無法生效</strong>
+    <br><br>
+    大多數情況下，以下操作可以解決問題。
+    <br><br>
+    <strong>1. 重新選擇封鎖App</strong><br>
+    　請在戒特內先解除所有封鎖App的選擇，再重新選擇並儲存。這樣會分配新的識別資訊，可解決大多數情況。
+    <br><br>
+    <strong>2. 重新啟動iPhone</strong><br>
+    　關機後再開機，與iOS的連動將重新建立。
+    <br><br>
+    <strong>3. 重新設定螢幕使用時間限制</strong><br>
+    　設定 → App → 戒特 → 將螢幕使用時間的限制關閉，然後再次開啟。開啟後若立即要求許可，請選擇「允許」。
+    <br><br>
+    <strong>4. 將iOS更新至最新版本</strong><br>
+    　此問題在更新iOS後可能會改善。
+    <br><br>
+    <p style="font-size:0.75rem; font-weight:700; color:rgba(16,32,67,0.45); letter-spacing:0.04em; margin-bottom:6px;">詳細說明</p>
+    戒特的App封鎖功能是利用Apple的「螢幕使用時間」（Screen Time API）實現的。因此，它依賴iOS端的狀態，而非應用程式本身。在更新iOS後等情況下，iOS傳遞給應用程式的「封鎖目標App識別資訊（Token）」可能發生偏移，導致選擇的App無法被封鎖。這是iOS端的已知問題，包括我在內的多名開發者已向Apple回報，但目前仍未修正。
+  </div>
+
+</body>
+</html>
