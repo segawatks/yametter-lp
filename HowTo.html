@@ -337,10 +337,11 @@
   <nav class="toc">
     <a href="#tonari"><span class="toc-num">01</span>となりに座る</a>
     <a href="#solo"><span class="toc-num">02</span>1人で集中</a>
-    <a href="#sumayame"><span class="toc-num">03</span>スマやめ連携</a>
-    <a href="#rank"><span class="toc-num">04</span>ランク</a>
-    <a href="#widget"><span class="toc-num">05</span>ウィジェット</a>
-    <a href="#block"><span class="toc-num">06</span>禁止アプリがブロックされない</a>
+    <a href="#tag"><span class="toc-num">03</span>タグ</a>
+    <a href="#sumayame"><span class="toc-num">04</span>スマやめ連携</a>
+    <a href="#rank"><span class="toc-num">05</span>ランク</a>
+    <a href="#widget"><span class="toc-num">06</span>ウィジェット</a>
+    <a href="#block"><span class="toc-num">07</span>禁止アプリがブロックされない</a>
   </nav>
 
   <!-- となりに座る -->
@@ -486,6 +487,86 @@
 
   <div class="naruhodo-wrap">
     <button class="naruhodo-btn" data-key="howto-solo" onclick="naruhodo(this)">
+      参考になった <span class="naruhodo-count"></span>
+    </button>
+  </div>
+
+  <div style="text-align:center; margin-top:16px;">
+    <a href="#" style="font-size:0.82rem; color:rgba(16,32,67,0.8); text-decoration:underline;">目次に戻る</a>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- タグ -->
+  <h2 class="section-title" id="tag">タグ</h2>
+
+  <div class="steps">
+
+    <div class="step-item" style="padding-top:8px;">
+      <p class="step-lead">片手で追加・削除・並び替え、全部できます。クラウド型の配置なので順番を気にしなくて良いです。雑に管理してOK。</p>
+      <div class="phone-frame" style="width:320px; border-radius:0;">
+        <div class="phone-inner" style="border-radius:0;">
+          <video src="mov/tagarea.mp4" autoplay muted loop playsinline webkit-playsinline style="width:100%; height:auto; aspect-ratio:auto;"></video>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <h2 class="sub-title">🤔 なんでタグなんて要るの？</h2>
+      <ol style="font-size:1.05rem; color:rgb(16,32,67); line-height:1.85; padding-left:1.4em; margin:0;">
+        <li style="margin-bottom:16px;"><span style="font-weight:500;">何に取り組んでいる人なのかを他のユーザーに知らせる。</span><br><span style="color:rgba(16,32,67,0.7);">ポストやとなりで座るではまず目に入るようになっています。</span></li>
+        <li style="margin-bottom:16px;"><span style="font-weight:500;">グラフをより魅力的なコンテンツにする</span><br><span style="color:rgba(16,32,67,0.7);">グラフは結果的に何百時間もかけて積み上げていくことになります。何に取り組んでいたかがわかれば、他のユーザーにとっても、未来の自分にとっても、より価値のあるコンテンツになるはずです。</span></li>
+        <li><span style="font-weight:500;">検索で自分のポストを見つけてもらう。</span><br><span style="color:rgba(16,32,67,0.7);">現在はユーザー検索のみですが、タグやワードでポストを検索できるようになります。</span></li>
+      </ol>
+    </div>
+
+    <div class="step-item">
+      <h2 class="sub-title">並び替え</h2>
+      <p class="step-lead">並び替えは先頭・最後尾への移動のみです。たまに使わなくなったタグを最後尾に回すだけで整理完了。</p>
+      <div class="phone-frame" style="width:320px; border-radius:0;">
+        <div class="phone-inner" style="border-radius:0;">
+          <video src="mov/tagsort.mp4" autoplay muted loop playsinline webkit-playsinline style="width:100%; height:auto; aspect-ratio:auto;"></video>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <h2 class="sub-title">内容テキスト</h2>
+      <p class="step-lead">長いテキストもOK。最大30文字まで。10文字以上はスクロール</p>
+      <div class="phone-frame" style="width:320px; border-radius:0;">
+        <div class="phone-inner" style="border-radius:0;">
+          <video src="mov/tagscroll.mp4" autoplay muted loop playsinline webkit-playsinline style="width:100%; height:auto; aspect-ratio:auto;"></video>
+        </div>
+      </div>
+    </div>
+
+    <div class="step-item">
+      <h2 class="sub-title">タグの変更</h2>
+      <p class="step-lead">ポストの直前と、グラフからはいつでも変更できます。編集チケット不要。</p>
+      <p style="font-size:0.88rem; color:rgb(16,32,67); text-align:center; margin-bottom:12px;">ポストの直前</p>
+      <div class="phone-frame" style="width:320px; border-radius:0;">
+        <div class="phone-inner" style="border-radius:0;">
+          <video src="mov/changetag_post.mp4" autoplay muted loop playsinline webkit-playsinline style="width:100%; height:auto; aspect-ratio:auto;"></video>
+        </div>
+      </div>
+      <p style="font-size:0.88rem; color:rgb(16,32,67); text-align:center; margin-top:40px; margin-bottom:12px;">棒グラフのタグ長押し（その日の単日のみ変更）</p>
+      <div class="phone-frame" style="width:320px; border-radius:0;">
+        <div class="phone-inner" style="border-radius:0;">
+          <img src="img/bartagchange.jpg" alt="棒グラフのタグ変更">
+        </div>
+      </div>
+      <p style="font-size:0.88rem; color:rgb(16,32,67); text-align:center; margin-top:40px; margin-bottom:12px;">円グラフのタグ長押し（その週・月の期間を一括で変更）</p>
+      <div class="phone-frame" style="width:320px; border-radius:0;">
+        <div class="phone-inner" style="border-radius:0;">
+          <img src="img/pietagchange.jpg" alt="円グラフのタグ変更">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="naruhodo-wrap">
+    <button class="naruhodo-btn" data-key="howto-tag" onclick="naruhodo(this)">
       参考になった <span class="naruhodo-count"></span>
     </button>
   </div>
