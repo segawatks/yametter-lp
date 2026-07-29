@@ -338,10 +338,11 @@
     <a href="#tonari"><span class="toc-num">01</span>となりに座る</a>
     <a href="#solo"><span class="toc-num">02</span>1人で集中</a>
     <a href="#tag"><span class="toc-num">03</span>タグ<span style="display:inline-block; font-size:0.6rem; font-weight:500; color:#fff; background:rgb(250,140,230); border-radius:99px; padding:0px 7px; margin-left:6px; vertical-align:middle; position:relative; top:0px; letter-spacing:0.04em;">NEW!</span></a>
-    <a href="#sumayame"><span class="toc-num">04</span>スマやめ連携</a>
-    <a href="#rank"><span class="toc-num">05</span>ランク</a>
-    <a href="#widget"><span class="toc-num">06</span>ウィジェット</a>
-    <a href="#block"><span class="toc-num">07</span>禁止アプリがブロックされない</a>
+    <a href="#rank"><span class="toc-num">04</span>ランク</a>
+    <a href="#search"><span class="toc-num">05</span>検索<span style="display:inline-block; font-size:0.6rem; font-weight:500; color:#fff; background:rgb(250,140,230); border-radius:99px; padding:0px 7px; margin-left:6px; vertical-align:middle; position:relative; top:0px; letter-spacing:0.04em;">NEW!</span></a>
+    <a href="#sumayame"><span class="toc-num">06</span>スマやめ連携</a>
+    <a href="#widget"><span class="toc-num">07</span>ウィジェット</a>
+    <a href="#block"><span class="toc-num">08</span>禁止アプリがブロックされない</a>
   </nav>
 
   <!-- となりに座る -->
@@ -577,40 +578,6 @@
 
   <div class="divider"></div>
 
-  <!-- スマやめ連携 -->
-  <h2 class="section-title" id="sumayame">スマやめ連携</h2>
-
-  <div class="steps">
-
-    <div class="step-item" style="padding-top:8px;">
-      <p class="step-lead">スマホをやめれば魚が育つがインストールされていると、ヤメッターでの集中タイムもアイテムに変換されて取得できます。グラフにも相互に反映されます。</p>
-      <p style="font-size:0.88rem; color:var(--text); margin-bottom:16px;">※ヤメッターインストール前の記録は同期されません</p>
-      <img src="img/LinkImg.png" alt="スマやめ連携" style="width:100%; height:auto; display:block;">
-    </div>
-
-    <div class="step-item">
-      <p class="step-lead">ただし連携しているとどちらかのタイマーが動作しているときはもう一方のタイマーは開始できなくなります。設定で連携をOFFにできます。</p>
-      <div class="phone-frame">
-        <div class="phone-inner">
-          <img src="img/sumaren.jpg" alt="連携設定">
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="naruhodo-wrap">
-    <button class="naruhodo-btn" data-key="howto-sumayame" onclick="naruhodo(this)">
-      参考になった <span class="naruhodo-count"></span>
-    </button>
-  </div>
-
-  <div style="text-align:center; margin-top:16px;">
-    <a href="#" style="font-size:0.82rem; color:rgba(16,32,67,0.8); text-decoration:underline;">目次に戻る</a>
-  </div>
-
-  <div class="divider"></div>
-
   <!-- ランク -->
   <h2 class="section-title" id="rank">ランク</h2>
 
@@ -654,6 +621,86 @@
 
   <div class="naruhodo-wrap">
     <button class="naruhodo-btn" data-key="howto-rank" onclick="naruhodo(this)">
+      参考になった <span class="naruhodo-count"></span>
+    </button>
+  </div>
+
+  <div style="text-align:center; margin-top:16px;">
+    <a href="#" style="font-size:0.82rem; color:rgba(16,32,67,0.8); text-decoration:underline;">目次に戻る</a>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 検索 -->
+  <h2 class="section-title" id="search">検索</h2>
+
+  <div class="steps">
+
+    <div class="step-item" style="padding-top:8px;">
+      <p class="step-lead">各画面の虫眼鏡ボタンから検索画面に移動できます。</p>
+      <div class="phone-frame" style="width:280px; border-radius:0;">
+        <div class="phone-inner">
+          <img src="img/search1.png" style="width:100%; height:auto; aspect-ratio:auto; display:block;">
+        </div>
+      </div>
+    </div>
+
+    <div class="step-item" style="padding-top:8px;">
+      <p class="rank-heading" style="margin-top:0;">検索されたくない場合</p>
+      <p class="step-lead">設定→プライバシーから</p>
+      <div class="rank-item">
+        <p class="rank-star">プロフィール検索を許可</p>
+        <p class="rank-desc">OFFにすると自己紹介欄にあるワードでの検索結果に表示されなくなります。例：「東京住みです」と書いてあっても「東京」での検索結果に表示されません。ニックネーム・IDでの検索には引き続き表示されます。</p>
+      </div>
+      <div class="rank-item">
+        <p class="rank-star">ポスト検索を許可</p>
+        <p class="rank-desc">OFFにするとポスト検索にあなたのポストは一切表示されなくなります。</p>
+      </div>
+      <div class="phone-frame" style="width:280px; border-radius:0; margin-top:20px;">
+        <div class="phone-inner">
+          <img src="img/search2.png" style="width:100%; height:auto; aspect-ratio:auto; display:block;">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="naruhodo-wrap">
+    <button class="naruhodo-btn" data-key="howto-search" onclick="naruhodo(this)">
+      参考になった <span class="naruhodo-count"></span>
+    </button>
+  </div>
+
+  <div style="text-align:center; margin-top:16px;">
+    <a href="#" style="font-size:0.82rem; color:rgba(16,32,67,0.8); text-decoration:underline;">目次に戻る</a>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- スマやめ連携 -->
+  <h2 class="section-title" id="sumayame">スマやめ連携</h2>
+
+  <div class="steps">
+
+    <div class="step-item" style="padding-top:8px;">
+      <p class="step-lead">スマホをやめれば魚が育つがインストールされていると、ヤメッターでの集中タイムもアイテムに変換されて取得できます。グラフにも相互に反映されます。</p>
+      <p style="font-size:0.88rem; color:var(--text); margin-bottom:16px;">※ヤメッターインストール前の記録は同期されません</p>
+      <img src="img/LinkImg.png" alt="スマやめ連携" style="width:100%; height:auto; display:block;">
+    </div>
+
+    <div class="step-item">
+      <p class="step-lead">ただし連携しているとどちらかのタイマーが動作しているときはもう一方のタイマーは開始できなくなります。設定で連携をOFFにできます。</p>
+      <div class="phone-frame">
+        <div class="phone-inner">
+          <img src="img/sumaren.jpg" alt="連携設定">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="naruhodo-wrap">
+    <button class="naruhodo-btn" data-key="howto-sumayame" onclick="naruhodo(this)">
       参考になった <span class="naruhodo-count"></span>
     </button>
   </div>
