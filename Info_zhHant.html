@@ -42,6 +42,7 @@
     .update-label { font-size: 0.72rem; font-weight: 700; color: rgba(16,32,67,0.45); letter-spacing: 0.06em; margin-bottom: 8px; }
     .update-scroll { max-height: 180px; overflow-y: scroll; -webkit-overflow-scrolling: touch; border: 1px solid rgba(16,32,67,0.1); border-radius: 10px; padding: 12px 16px; background: rgba(16,32,67,0.02); }
     .update-ver { font-size: 0.8rem; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+    .update-scroll .update-ver:first-child { color: var(--accent); }
     .update-list { list-style: none; padding: 0; }
     .update-list li { font-size: 0.82rem; color: var(--text); line-height: 1.7; padding-left: 1em; position: relative; }
     .update-list li::before { content: '-'; position: absolute; left: 0; color: rgba(16,32,67,0.4); }
@@ -58,7 +59,11 @@
   <div class="update-section">
     <p class="update-label">最新更新內容</p>
     <div class="update-scroll">
-      <p class="update-ver">ver.1.5.0</p>
+      <p class="update-ver">ver.1.5.3</p>
+      <ul class="update-list">
+        <li>新增匯集高關注度貼文的「Pick Up」分頁。<br>（訂閱用戶也可以在設定中隱藏此分頁）</li>
+      </ul>
+      <p class="update-ver" style="margin-top:12px;">ver.1.5.0</p>
       <ul class="update-list">
         <li>專注時間中可以發送貼圖。</li>
       </ul>
