@@ -254,14 +254,114 @@
       border-left: 4px solid rgb(47,85,138);
       padding-left: 12px;
     }
+    /* ─── UPDATE NOTICE (既存ユーザー向け) ─── */
+    .notice {
+      background: rgba(255,245,253,1);
+      border: 1.5px solid rgba(250,140,230,0.4);
+      border-radius: 12px;
+      padding: 20px 20px 22px;
+      margin-bottom: 36px;
+      box-shadow: 0 2px 8px rgba(47,85,138,0.06);
+    }
+    .notice-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      padding: 1px 10px;
+      border-radius: 99px;
+      margin-bottom: 8px;
+    }
+    .notice-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+    .notice-sub {
+      font-size: 0.8rem;
+      color: rgba(16,32,67,0.55);
+      margin-bottom: 18px;
+    }
+    .notice-group + .notice-group {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(250,140,230,0.3);
+    }
+    .notice-group-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .notice-item {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+    .notice-item strong { color: var(--text); }
+    .notice-reset {
+      background: #fff;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-top: 6px;
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+    .notice-why {
+      font-size: 0.85rem;
+      color: rgba(16,32,67,0.7);
+      background: rgba(47,85,138,0.06);
+      border-radius: 8px;
+      padding: 10px 14px;
+      line-height: 1.7;
+    }
   </style>
 </head>
 <body>
 
+  <div class="notice">
+    <span class="notice-badge">ver.1.5.4</span>
+    <p class="notice-title">いつも使っている方へ<br>今回のアップデートで変わったこと</p>
+    <p class="notice-sub">ver.1.5.4 で、となりに座る条件と編集チケットが変わりました。</p>
+
+    <div class="notice-group">
+      <p class="notice-group-title">パートナーとマッチしやすくなりました</p>
+      <p class="notice-item"><strong>パートナー検索</strong><br>パートナーが見つからなかったときは、セットした時間が近いユーザーのとなりに自動で座るようになりました。</p>
+      <p class="notice-item"><strong>☆1からとなりに座れる</strong><br>これまでは☆3が必要でしたが、☆1からとなりに座れるようになりました。</p>
+      <p class="notice-item"><strong>月初のリセット</strong><br>毎月1日のランクのリセットが次のように変わります。
+        <span class="notice-reset" style="display:block;">
+          前月 ☆4以下 → ☆0<br>
+          前月 ☆5 → ☆1（月初からすぐとなりに座れます）
+        </span>
+      </p>
+      <p class="notice-why">この3つは、パートナーとマッチするハードルを下げて、アプリ全体をもっとにぎやかにするための変更です。</p>
+    </div>
+
+    <div class="notice-group">
+      <p class="notice-group-title">編集チケットを廃止しました</p>
+      <p class="notice-item" style="margin-bottom:0;">ほとんど使われていなかったため、編集チケットはなくなりました。これまでチケットが必要だったポストとグラフの編集は、回数の制限なくできるようになります（ポストの編集は投稿から24時間以内）。</p>
+    </div>
+
+    <div style="text-align:center; margin-top:20px;">
+      <a href="https://apps.apple.com/jp/app/%E3%83%A4%E3%83%A1%E3%83%83%E3%82%BF%E3%83%BC/id6755225951" style="display:inline-block; background:rgb(250,140,230); color:#fff; font-weight:700; font-size:0.8rem; text-decoration:none; padding:7px 20px; border-radius:99px;">アップデートを確認</a>
+    </div>
+  </div>
+
   <div class="update-section">
     <p class="update-label">最近の更新内容</p>
     <div class="update-scroll">
-      <p class="update-ver">ver.1.5.3</p>
+      <p class="update-ver">ver.1.5.4</p>
+      <ul class="update-list">
+        <li>パートナーが見つからないとき、セット時間が近いユーザーのとなりに座るように変更</li>
+        <li>☆1からとなりに座れるように変更（これまでは☆3から）</li>
+        <li>月初リセットを変更（前月☆4以下→☆0、前月☆5→☆1）</li>
+        <li>編集チケットを廃止。ポスト・グラフの編集が無制限に（ポストは24時間以内）</li>
+      </ul>
+      <p class="update-ver" style="margin-top:12px;">ver.1.5.3</p>
       <ul class="update-list">
         <li>注目度の高いポストを集めたPick Upタブを追加しました。<br>（サブスクにご加入の方は、設定からタブを非表示にすることもできます）</li>
       </ul>
@@ -340,7 +440,7 @@
   <div class="note no-before" style="margin-top:20px; padding-top:0;">
     <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:rgb(47,85,138); margin-right:8px; vertical-align:middle; position:relative; top:-2px;"></span><strong style="font-size:1.05rem; color:#102043;">グラフの編集(減少・削除のみ)</strong>
     <br><span style="display:block; margin-top:6px;"></span>
-    棒グラフのタグの長押しから集中タイムを減少・削除できます。増加させることはできません。一回の編集に編集チケットを1枚消費します。
+    棒グラフのタグの長押しから集中タイムを減少・削除できます。増加させることはできません。ver.1.5.4から編集チケットは不要になり、何度でも編集できます。
     <br>
     <div style="border:1px solid rgba(16,32,67,0.5); margin:15px auto; display:table; max-width:60%;">
       <video src="mov/chartEdit.mp4" autoplay loop muted playsinline style="width:100%; display:block; height:auto;"></video>
