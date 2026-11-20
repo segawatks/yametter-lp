@@ -256,7 +256,7 @@
     }
     /* ─── UPDATE NOTICE (既存ユーザー向け) ─── */
     .notice {
-      background: rgba(255,245,253,0.5);
+      background: rgba(250,140,230,0.12);
       padding: 20px 20px 22px;
       margin-bottom: 36px;
     }
@@ -273,16 +273,16 @@
     }
     .notice-title,
     .notice-group-title {
-      font-size: 1.05rem;
+      font-size: 0.9rem;
       font-weight: 700;
       color: #102043;
       line-height: 1.6;
       margin-bottom: 8px;
     }
     .notice-sub {
-      font-size: 1rem;
+      font-size: 0.82rem;
       color: #102043;
-      line-height: 1.85;
+      line-height: 1.7;
       margin-bottom: 18px;
     }
     .notice-group + .notice-group {
@@ -291,32 +291,35 @@
       border-top: 1px solid rgba(16,32,67,0.15);
     }
     .notice-item {
-      font-size: 1rem;
+      font-size: 0.82rem;
       color: #102043;
-      line-height: 1.85;
+      line-height: 1.7;
       margin-bottom: 12px;
     }
     .notice-reset {
       background: #fff;
       padding: 10px 14px;
       margin-top: 6px;
-      font-size: 1rem;
-      line-height: 1.85;
+      font-size: 0.82rem;
+      line-height: 1.7;
     }
     .notice-bar {
       display: inline-block;
-      width: 4px;
-      height: 1em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
       background: var(--primary);
-      margin-right: 8px;
-      vertical-align: -0.12em;
+      margin-right: 6px;
+      vertical-align: middle;
+      position: relative;
+      top: -1px;
     }
     .notice-why {
-      font-size: 1rem;
+      font-size: 0.82rem;
       color: #102043;
       background: rgba(47,85,138,0.06);
       padding: 10px 14px;
-      line-height: 1.85;
+      line-height: 1.7;
     }
   </style>
 </head>
@@ -341,12 +344,9 @@
 
     <div class="notice-group">
       <p class="notice-group-title">編集チケットを廃止しました</p>
-      <p class="notice-item" style="margin-bottom:0;">編集チケットはあまり活用されていなかったため、廃止しました。これまでチケットが必要だったポストとグラフの編集は、回数の制限なく行えます。なお、ポストの編集は投稿から24時間以内に限ります。</p>
+      <p class="notice-item" style="margin-bottom:0;">編集チケットはあまり活用されていなかったため、廃止しました。これまでチケットが必要だったポストとグラフの編集は、回数の制限なく行えます。（ポストの編集は投稿から24時間以内）</p>
     </div>
 
-    <div style="text-align:center; margin-top:20px;">
-      <a href="https://apps.apple.com/jp/app/%E3%83%A4%E3%83%A1%E3%83%83%E3%82%BF%E3%83%BC/id6755225951" style="display:inline-block; background:rgb(250,140,230); color:#fff; font-weight:700; font-size:0.8rem; text-decoration:none; padding:7px 20px; border-radius:99px;">アップデートを確認</a>
-    </div>
   </div>
 
   <div class="update-section">

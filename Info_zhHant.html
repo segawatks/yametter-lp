@@ -54,7 +54,7 @@
     .section-title { font-size: 1.15rem; font-weight: 600; color: rgb(16,32,67); margin-bottom: 14px; line-height: 1.4; border-left: 4px solid rgb(47,85,138); padding-left: 12px; }
     /* ─── UPDATE NOTICE (既存ユーザー向け) ─── */
     .notice {
-      background: rgba(255,245,253,0.5);
+      background: rgba(250,140,230,0.12);
       padding: 20px 20px 22px;
       margin-bottom: 36px;
     }
@@ -71,16 +71,16 @@
     }
     .notice-title,
     .notice-group-title {
-      font-size: 1.05rem;
+      font-size: 0.9rem;
       font-weight: 700;
       color: #102043;
       line-height: 1.6;
       margin-bottom: 8px;
     }
     .notice-sub {
-      font-size: 1rem;
+      font-size: 0.82rem;
       color: #102043;
-      line-height: 1.85;
+      line-height: 1.7;
       margin-bottom: 18px;
     }
     .notice-group + .notice-group {
@@ -89,24 +89,35 @@
       border-top: 1px solid rgba(16,32,67,0.15);
     }
     .notice-item {
-      font-size: 1rem;
+      font-size: 0.82rem;
       color: #102043;
-      line-height: 1.85;
+      line-height: 1.7;
       margin-bottom: 12px;
     }
     .notice-reset {
       background: #fff;
       padding: 10px 14px;
       margin-top: 6px;
-      font-size: 1rem;
-      line-height: 1.85;
+      font-size: 0.82rem;
+      line-height: 1.7;
     }
     .notice-why {
-      font-size: 1rem;
+      font-size: 0.82rem;
       color: #102043;
       background: rgba(47,85,138,0.06);
       padding: 10px 14px;
-      line-height: 1.85;
+      line-height: 1.7;
+    }
+    .notice-bar {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--primary);
+      margin-right: 6px;
+      vertical-align: middle;
+      position: relative;
+      top: -1px;
     }
   </style>
 </head>
@@ -114,14 +125,13 @@
 
   <div class="notice">
     <span class="notice-badge">ver.1.6.0</span>
-    <p class="notice-title">致各位現有使用者<br>本次更新的變更內容</p>
-    <p class="notice-sub">「坐在旁邊」的條件與貼文編輯券的機制有所變更。</p>
+    <p class="notice-title">致各位現有使用者</p>
+    <p class="notice-sub">以下3項規格已變更。</p>
 
     <div class="notice-group">
-      <p class="notice-group-title">更容易與夥伴配對了</p>
-      <p class="notice-item"><strong>夥伴搜尋</strong><br>找不到夥伴時，會自動坐在設定時間相近的使用者旁邊。</p>
-      <p class="notice-item"><strong>從☆1起即可坐在旁邊</strong><br>過去需要☆3以上才能坐在旁邊，現在從☆1起就可以了。</p>
-      <p class="notice-item"><strong>每月初的重設</strong><br>每月1日的等級重設改為如下。
+      <p class="notice-item"><strong><span class="notice-bar"></span>夥伴搜尋</strong><br>找不到夥伴時，會自動坐在設定時間相近的使用者旁邊。</p>
+      <p class="notice-item"><strong><span class="notice-bar"></span>從☆1起即可坐在旁邊</strong><br>過去需要☆3以上才能坐在旁邊，現在從☆1起就可以了。</p>
+      <p class="notice-item"><strong><span class="notice-bar"></span>每月初的重設</strong><br>每月1日的等級重設改為如下。
         <span class="notice-reset" style="display:block;">
           上個月☆4以下的使用者 → ☆0<br>
           上個月☆5的使用者 → ☆1（月初即可馬上坐在旁邊）
@@ -135,9 +145,6 @@
       <p class="notice-item" style="margin-bottom:0;">由於貼文編輯券的使用率不高，因此決定廢除。過去需要編輯券的貼文與圖表編輯，現在都可以不限次數進行。但貼文僅限發佈後24小時內可編輯。</p>
     </div>
 
-    <div style="text-align:center; margin-top:20px;">
-      <a href="https://apps.apple.com/tw/app/id6755225951" style="display:inline-block; background:rgb(250,140,230); color:#fff; font-weight:700; font-size:0.8rem; text-decoration:none; padding:7px 20px; border-radius:99px;">更新確認</a>
-    </div>
   </div>
 
   <div class="update-section">
